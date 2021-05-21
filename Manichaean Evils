@@ -1,0 +1,101 @@
+"The Manichaean Evils"
+
+[The hero quests to find the heart of the darkness and defeat for once and forever. During a pivotal moment (the 3rd stage of Joe Campbell) the hero chooses good, evil or neither. Following that, we see an epic quest for the heart of Good/Evil/both and then an epic fight]
+[cleanse -neither, purify -good, corrupt -evil]
+[hopefully ranged weapons, magic, armor, health]
+[random enemy encounters???]
+
+[Starting the story and auto-scoring*************************************]
+Use scoring.
+
+turnCounter is a number that varies. turnCounter is initially 0.
+
+Every turn:
+now turnCounter is turnCounter + 1.
+
+Every turn while turnCounter >= 3:
+increase score by 1;
+now turnCounter is 0.
+
+The maximum score is 2500.
+
+When play begins:
+say "[italic type]   Aeons ago, an epic collision between the light and darkness erupted throughout the world. Blinding or obscuring the whole world, two entities of fundamental forces began to exist with a sentience of their own. These entities sought to overwhelm the other, only to annihilate themselves. Not a bit of the others existed.[line break][line break]      However, hidden specks and seeds the forces hid grew to be more powerful, more ruthless. After that epic war, they had to overcome the other. This next fight would be more brutal. This next fight would change the rest of the world. This next fight would define millennia of the universe - subjugated to the Darkness or freed by the Light.[line break][line break]       The force of Light determined itself to be peaceful, turning the life around them into pure versions of itself, without any error or anomaly. But after the war, it decided to destroy anything impure, and forcibly heal others or 'sanitize' the world of their 'evil'. It would call its healed entities the Sanctified Seraphim.[line break][line break]       The force of Darkness was aggressive. It attacked and made the world a hard place, as hard places make harder people. After, though, the Darkness retreated, straight-up aggression was too risky against the Light. It adopted more pacifistic ideas, trying to rule people by their greatest flaws, naming its clones the Whisperers In The Darkness.[line break][line break]       But there was one who would not be dissauded from the light and the dark. The hero quested near and far, for days and weeks and months and years, until they finally found the shrine. The shrine which had an epic blade of light to turn back the Darkness that threatened to consume the world. The one star... in the night sky.".
+
+[Starting Room, taking Excalibur, finding an exit************************]
+Enchanted Shrine is a lighted room. "On the small island you are standing on, you see a wondrous blade deep within a large boulder. Large monoliths of stone surround you and the sword, covered with moss. The water outside the island is perfectly still. There is a tree that is unusually flat on one end.".
+
+The sword in a stone is an object. The sword in a stone is in Enchanted Shrine. The description of The sword in a stone is "The sword has a golden hilt, and what appears to be a platinum/steel mix for a blade. The large rock appears to be just a regular rock, although you can see some flecks of what might be iron. Perhaps you might want to [bold type]withdraw the sword[roman type].".
+Instead of taking the sword:
+say "You can't mean to lug around the rock AND the sword...? Surely that would be too much for you. Find a better solution for this, even if it means looking more carefully.".
+Withdrawing is an action applying to nothing. Understand "withdraw" and "withdraw the sword" as withdrawing.
+carry out withdrawing:
+    say "You carefully take a power stance around the stone. Grasping the hilt, you pull the blade out of the stone. An epic burst of light flashes from the blade, and you see the legendary Excalibur, now in your hand. You feel charged with a noble sense of duty to find the Heart of Corruption, and end the Darkness.[line break]";
+    remove sword in a stone from play;
+    now the player is carrying Excalibur.
+
+Tree Door is a door. Tree Door is scenery. Tree Door is lockable and locked. Tree Door is east of Enchanted Shrine. Through it is Underground. "A large sequioa, with one end completely flat, with a subtle depression. The bark is rather rough, but it seems a solid tree. If it could talk, it would be a great, reliable pal.".
+After examining Tree Door for the first time:
+say "You discover that the subtle depression can be pushed open to the east- you've found a way out of here!";
+now Tree Door is unlocked.
+
+[Entering the forest, starting the adventure*****************************]
+Underground is a room. "A dank, muddy place leading onwards to ... north. The only exit from the shrine. It occurs to you that you never knew how you got to the shrine in the first place.".
+Instead of going west in Underground:
+say "You've forgotten about whatever was special about this place. Which is weird, considering that you are now in here for no apparent reason.".
+
+Game Trail is north of Forest Entrance. "You see a small tuft of fur here, some broken branches there. This is a trail, and if you go north there is a small stream. To the south is an entrance to the forest.".
+
+Forest Stream is north of Game Trail. "A quiet stream murmurs while running through the forest. The large amounts of tracks indicate a lot of animals come here to drink."
+[ADD FOOD AND HUNTING HERE]
+
+Forest Entrance is north of Underground. "A standard forest. Full of trees, bushes, animals and more. A small game trail leads north, and to your northeast lies the town.".
+[City, add buying stuff- maybe subtracting points?***********************]
+Urbs City is northeast of Forest Entrance. "A bustling city full of children, farmers and women. There seems to be a smithy, a store, and an apothecary all here. Of course there is more, but those seem to grab your interest the most. The smithy is north, the store east, the alchemyst west, and an exit is southwest.".
+
+Steel Superiority Smithy is north of Urbs City. "A large smithy. Around ten men are hammering on various items for the city. This is a good place to buy arms and armor, you think. There is also a nice crossbow on the wall. The exit is to the south.".
+
+Walton Mart is east of Urbs City. "A large store full of goods at extremely low prices! Not to be confused with BulkBuy. You recall this chain of stores also kills a lot of small businesses, but you cannot deny the cheap stuff.".
+
+Alchemic Apothecary is west of Urbs City. "A homely little shop, full of odd trinkets. You think that is a pickled toenail(?) on a shelf when the shopkeeper asks if you need any quality potion or health cure. Although strange, maybe something good can be bought here.".
+
+[Custom Actions**********************************************************]
+Using is an action applying to one thing. Understand "use [something]" as using.
+
+xyzzying is an action applying to nothing. Understand "xyzzy" as xyzzying.
+instead of xyzzying:
+say "Moves to Urbs City for now. Mostly a testing thing, but hopefully something cool later.";
+move the player to Urbs City.
+
+Combining is an action applying to nothing. Understand "combine the blades" and "combine" as Combining.
+CombinedEX is a number that varies. CombinedEX is initially 0.
+CombinedNE is a number that varies. CombinedNE is initially 0.
+[0 = none, 1= hasBlade (ne=nights edge, ex=excalibur)]
+
+[carry out combining:
+if the player is carrying Night's Edge, now CombinedNE is 1;
+if the player is carrying Excalibur, now CombinedEX is 1;
+if CombinedEX is 1 and Combined NE is 1:
+    now the player is carrying Terra Blade;
+    remove Night's Edge from play;
+    remove Excalibur from play.]
+
+[Room to stash various items*********************************************]
+Items Location is a room. "You shouldn't be here. Please tell Owen how you got here.". 
+Terra Blade is in Items Location. 
+Excalibur is in Items Location.
+Night's Edge is in Items Location
+
+A weapon is a kind of thing.
+
+Excalibur is a weapon. [This is only a description]
+Understand "Excal" as Excalibur.
+The description of the Excalibur is "Gold edged and steel forged, this is the blade of light. A legendary weapon meant only for the pure of heart."
+
+Night's Edge is a weapon. [This is only a description]
+Understand "Nightsedge" and "Night" and "Nights" and "Edge" as Night's Edge.
+The description of the Night's Edge is "A deep purple blade, sharp in edge and essence. This is a legendary weapon, for the agents of corruption.".
+
+Terra Blade is a weapon. [This is only a description]
+Understand "Terrablade" and "Terra" as Terra Blade.
+The description of the Terra Blade is "The legendary sword of light and darkness. The blade of the heroes past and present. Shimmering in vibrant greens and lively golds, this blade is the embodiment of prosperity.".
