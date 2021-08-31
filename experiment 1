@@ -3,11 +3,20 @@
 Laboratory is a room.
 "A sterile white lab, [one of]smelling faintly of formaldehyde[or]bathed in clean white light[or]neat, almost obsessively organized[at random].".
 
-The box is closed and unlocked.
-The box is openable and lockable.
-A box is in Laboratory.
-The description of box is "A plain cardboard box.".
+The letter opener is a thing.
+The description is "A small knife. Not really a box opener, but it works.".
+The player carries the letter opener.
 
-In the box is a cat.
+
+The letter opener unlocks the small box.
+The small box is closed and locked.
+The small box is openable and lockable.
+A small box is in Laboratory.
+The description of the small box is "A plain cardboard box.".
+
+In the small box is a cat.
 A cat is a thing.
 The description of cat is "A fat, ginger tomcat named, weirdly enough, Mrs. Snuggly.".
+Instead of attacking the cat:
+    say "The cat mrowls angrily, dodging your feeble blow. It slices your leg, leaving marks. Ouch.";
+    now the cat is in Laboratory.
