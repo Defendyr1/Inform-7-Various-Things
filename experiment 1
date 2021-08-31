@@ -3,12 +3,11 @@
 Laboratory is a room.
 "A sterile white lab, [one of]smelling faintly of formaldehyde[or]bathed in clean white light[or]neat, almost obsessively organized[at random].".
 
-The letter opener is a thing.
+The penknife is a thing.
 The description is "A small knife. Not really a box opener, but it works.".
-The player carries the letter opener.
+The player carries the penknife.
 
-
-The letter opener unlocks the small box.
+The penknife unlocks the small box.
 The small box is closed and locked.
 The small box is openable and lockable.
 A small box is in Laboratory.
@@ -20,3 +19,9 @@ The description of cat is "A fat, ginger tomcat named, weirdly enough, Mrs. Snug
 Instead of attacking the cat:
     say "The cat mrowls angrily, dodging your feeble blow. It slices your leg, leaving marks. Ouch.";
     now the cat is in Laboratory.
+
+In the small box is an adventurous letter.
+The adventurous letter is a thing. 
+Understand "letter" as the adventurous letter. 
+Instead of examining the adventurous letter:
+    say "The letter has letters.". 
