@@ -1,5 +1,8 @@
 "Experimentation 1"
 
+When play begins:
+    say "You are a prestigious scientist working at MIT. While unknown the the world, your pseudonym Dr. C. Niall G. Niess is very popular. One day, you come into work like always, no doubt expecting to create miracles. Yet something is off about today.".
+
 Laboratory is a room.
 "A sterile white lab, [one of]smelling faintly of formaldehyde[or]bathed in clean white light[or]neat, almost obsessively organized[at random].".
 
