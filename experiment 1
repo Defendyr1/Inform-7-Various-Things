@@ -20,8 +20,17 @@ Instead of attacking the cat:
     say "The cat mrowls angrily, dodging your feeble blow. It slices your leg, leaving marks. Ouch.";
     now the cat is in Laboratory.
 
-In the small box is an adventurous letter.
-The adventurous letter is a thing. 
-Understand "letter" as the adventurous letter. 
-Instead of examining the adventurous letter:
-    say "The letter has letters.". 
+In the small box is a adventure letter.
+The adventure letter is a thing. 
+Understand "letter" as the adventure letter. 
+Instead of examining the adventure letter:
+    say "Have you finished the basic exploration? If so, you can progress to a REAL adventure. Say ADVENTURE to begin. (This only works once, so be careful.)".
+
+The test tube is a thing.
+The test tube is on the lab table.
+The description of the test tube is "A test tube, with a bubbling green fluid inside.".
+
+The lab table is a supporter.
+The lab table is fixed in place.
+The lab table is in Laboratory.
+The description of the lab table is "A lab table is in the middle of the room, covered with mechanical and chemical gizmos.".
