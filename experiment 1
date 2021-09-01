@@ -9,8 +9,8 @@ Laboratory is a room.
 The penknife is a thing.
 The description is "A small knife. Not really a box opener, but it works.".
 The player carries the penknife.
-
 The penknife unlocks the small box.
+
 The small box is closed and locked.
 The small box is openable and lockable.
 A small box is in Laboratory.
@@ -37,3 +37,14 @@ The lab table is a supporter.
 The lab table is fixed in place.
 The lab table is in Laboratory.
 The description of the lab table is "A lab table is in the middle of the room, covered with mechanical and chemical gizmos.".
+
+The AK-47 is a thing.
+A thing can be a weapon.
+A thing has a number that varies called wdamage.
+The wdamage of a thing is usually 0.
+The AK-47 is a weapon.
+The player carries the AK-47.
+The description of the AK-47 is "An AK-47. Fires 7.62 ammo, also short for Ass Kicker.".
+The wdamage of AK-47 is 10.
+
+///AK47 has wdamage errors.
