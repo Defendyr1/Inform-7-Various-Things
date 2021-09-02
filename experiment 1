@@ -38,13 +38,23 @@ The lab table is fixed in place.
 The lab table is in Laboratory.
 The description of the lab table is "A lab table is in the middle of the room, covered with mechanical and chemical gizmos.".
 
-The AK-47 is a thing.
-A thing can be a weapon.
-A thing has a number that varies called wdamage.
-The wdamage of a thing is usually 0.
+A weapon is a kind of thing.
+A weapon has a number called dmgWeap.
+The dmgWeap of a weapon is  0.
+
 The AK-47 is a weapon.
 The player carries the AK-47.
 The description of the AK-47 is "An AK-47. Fires 7.62 ammo, also short for Ass Kicker.".
-The wdamage of AK-47 is 10.
+The dmgWeap of AK-47 is 10.
 
-///AK47 has wdamage errors.
+A ammunition is a kind of thing.
+A ammunition has a number called dmgAmmo.
+The dmgAmmo of a ammunition is 0.
+A ammunition has a number called quantityAmmo.
+The quantityAmmo is usually 0.
+
+The 7.62 clip is a ammunition.
+The player carries the 7.62 clip.
+The description of the 7.62 clip is "A 30 round magazine of 7.62, with [quantityAmmo] rounds currently in it.".
+The quantityAmmo of the 7.62 clip is 30.
+The dmgAmmo of the 7.62 clip is 5. 
