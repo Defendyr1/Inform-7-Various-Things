@@ -1,10 +1,33 @@
 "Experimentation 1"
 
+[stops game fromo blurting out container contents while container is closed]
+Rule for printing room description details of a closed container:
+    stop.
+
+Rule for printing the name of a closed container (called C) while taking inventory:
+    say "[printed name of C]";
+    omit contents in listing.
+
+[allows reading books and stuff]
+A thing has some text called reading-material.
+The reading-material of a thing is usually "".
+
+Understand the command "read" as something new.
+Reading is an action applying to one thing and requiring light.
+Understand "read [something]" as reading.
+[
+A check reading rule:
+[    if the reading-material of the noun is "":]
+        Try examining the noun instead.
+]
+Carry out reading:
+    say "[reading-material of the noun]".
+
 When play begins:
     say "You are a prestigious scientist working at MIT. While unknown the the world, your pseudonym Dr. C. Niall G. Niess is very popular. One day, you come into work like always, no doubt expecting to create miracles. Yet something is off about today.".
 
 Laboratory is a room.
-"A sterile white lab, [one of]smelling faintly of formaldehyde[or]bathed in clean white light[or]neat, almost obsessively organized[at random].".
+"A sterile white lab, [one of]smelling faintly of formaldehyde[or]bathed in clean white light[or] almost obsessively organized[at random]. This is really your home, a home of wonderful science.".
 
 The penknife is a thing.
 The description is "A small knife. Not really a box opener, but it works.".
@@ -39,22 +62,26 @@ The lab table is in Laboratory.
 The description of the lab table is "A lab table is in the middle of the room, covered with mechanical and chemical gizmos.".
 
 A weapon is a kind of thing.
-A weapon has a number called dmgWeap.
+A weapon has a number called dmgWeap. [the damage of the weapon]
 The dmgWeap of a weapon is  0.
 
 The AK-47 is a weapon.
 The player carries the AK-47.
-The description of the AK-47 is "An AK-47. Fires 7.62 ammo, also short for Ass Kicker.".
+The description of the AK-47 is "An AK-47. Fires 7.62x39mm ammo. Very dangerous.".
 The dmgWeap of AK-47 is 10.
+Understand "ak" and "ak47" as the AK-47.
 
 A ammunition is a kind of thing.
-A ammunition has a number called dmgAmmo.
+A ammunition has a number called dmgAmmo. [the damage of the ammo]
 The dmgAmmo of a ammunition is 0.
-A ammunition has a number called quantityAmmo.
+A ammunition has a number called quantityAmmo. [the amount of ammo in a magazine of ammo]
 The quantityAmmo is usually 0.
 
 The 7.62 clip is a ammunition.
 The player carries the 7.62 clip.
-The description of the 7.62 clip is "A 30 round magazine of 7.62, with [quantityAmmo] rounds currently in it.".
+The description of the 7.62 clip is "A 30 round magazine of 7.62x39mm, with [quantityAmmo] rounds currently in it.".
 The quantityAmmo of the 7.62 clip is 30.
 The dmgAmmo of the 7.62 clip is 5. 
+
+
+[the reading check has nesting punctuation errors. Must fix, and the AK47 works]
