@@ -129,7 +129,11 @@ East of Middle of Nowhere is Swirling Sands.
 The description of Swirling Sands is "The winds slowly drift sand across the dunes. To the east, mountains await.".
 
 East of Swirling Sands is Mountain Base.
-The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northwest.".
+The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northeast.".
+Instead of going east in Mountain Base:
+    say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
+Instead of going up in Mountain Base:
+    say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
 
 Northeast of Mountain Base is Cave.
 The description of Cave is "A cave hidden under the mountain, with a passage deep down into the underground.".
