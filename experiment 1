@@ -15,11 +15,12 @@ The reading-material of a thing is usually "".
 Understand the command "read" as something new.
 Reading is an action applying to one thing and requiring light.
 Understand "read [something]" as reading.
-[
+
 A check reading rule:
-[    if the reading-material of the noun is "":]
-        Try examining the noun instead.
-]
+    if the reading-material of the noun is "" begin;
+        try examining the noun instead;
+    end if.
+
 Carry out reading:
     say "[reading-material of the noun]".
 
