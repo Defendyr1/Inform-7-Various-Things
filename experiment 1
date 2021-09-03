@@ -131,3 +131,6 @@ The description of Swirling Sands is "The winds slowly drift sand across the dun
 East of Swirling Sands is Mountain Base.
 The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northwest.".
 
+Northeast of Mountain Base is Cave.
+The description of Cave is "A cave hidden under the mountain, with a passage deep down into the underground.".
+Cave is dark. [Now Cave is lit]
