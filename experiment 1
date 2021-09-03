@@ -125,16 +125,20 @@ Middle of Nowhere is a room.
 The printed name of Middle of Nowhere is "The Middle of Nowhere".
 The description of Middle of Nowhere is "The vast desert stretches around you. To the east lies a mountain range.".
 
-East of Middle of Nowhere is Swirling Sands.
+Swirling Sands is east of Middle of Nowhere.
 The description of Swirling Sands is "The winds slowly drift sand across the dunes. To the east, mountains await.".
 
-East of Swirling Sands is Mountain Base.
+Mountain Base is east of Swirling Sands.
 The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northeast.".
 Instead of going east in Mountain Base:
     say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
 Instead of going up in Mountain Base:
     say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
 
-Northeast of Mountain Base is Cave.
+Cave is northeast of Mountain Base.
 The description of Cave is "A cave hidden under the mountain, with a passage deep down into the underground.".
 Cave is dark. [Now Cave is lit]
+
+Ocean Beachside is east of Mountain Base.
+The description of Ocean Beachside is "The sounds of the sea are radically different from the silence of the desert. The ocean is as barren as the desert, but underneath lies a multitude of oceanic life."
+
