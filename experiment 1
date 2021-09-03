@@ -1,6 +1,6 @@
 "Experimentation 1"
 
-[stops game fromo blurting out container contents while container is closed]
+[stops game from blurting out container contents while container is closed]
 Rule for printing room description details of a closed container:
     stop.
 
@@ -24,8 +24,12 @@ A check reading rule:
 Carry out reading:
     say "[reading-material of the noun]".
 
+To LB: [creates a line break function]
+    say "[line break]".
+
 When play begins:
-    say "You are a prestigious scientist working at MIT. While unknown the the world, your pseudonym Dr. C. Niall G. Niess is very popular. One day, you come into work like always, no doubt expecting to create miracles. Yet something is off about today.".
+    say "You are a prestigious scientist working at MIT. While unknown the the world, your pseudonym Dr. C. Niall G. Niess is very popular. One day, you come into work like always, no doubt expecting to create miracles. Yet something is off about today.";
+    LB. [the line break function in use]
 
 Laboratory is a room.
 "A sterile white lab, [one of]smelling faintly of formaldehyde[or]bathed in clean white light[or] almost obsessively organized[at random]. This is really your home, a home of wonderful science.".
@@ -50,8 +54,8 @@ Instead of attacking the cat:
 In the small box is a adventure letter.
 The adventure letter is a thing. 
 Understand "letter" as the adventure letter. 
-Instead of examining the adventure letter:
-    say "Have you finished the basic exploration? If so, you can progress to a REAL adventure. Say ADVENTURE to begin. (This only works once, so be careful.)".
+The description of the adventure letter is "A simple letter, on what appears to be old papyrus. It's fanciful calligraphy calls to mind old English letters, and it smells of mystique. Try 'read letter' to read this mysterious parchment."
+The reading-material of the adventure letter is "Type 'Adventure' to get started on a journey through space and time. Excitement awaits![line break]".
 
 The test tube is a thing.
 The test tube is on the lab table.
@@ -80,9 +84,50 @@ The quantityAmmo is usually 0.
 
 The 7.62 clip is a ammunition.
 The player carries the 7.62 clip.
-The description of the 7.62 clip is "A 30 round magazine of 7.62x39mm, with [quantityAmmo] rounds currently in it.".
+The description of the 7.62 clip is "A 30 round magazine of 7.62x39mm, with [quantityAmmo] rounds in it.".
 The quantityAmmo of the 7.62 clip is 30.
 The dmgAmmo of the 7.62 clip is 5. 
+Understand "762" and "clip" as the 7.62 clip.
 
+[Kickstarts the adventure.]
+Adventuring is an action applying to nothing.
+Understand "Adventure" as adventuring.
+AdventuredCheck is a number that varies.
+AdventuredCheck is initially 0.
+Instead of adventuring:
+    If AdventuredCheck is 0 begin;
+        now the AK-47 is in Laboratory;
+        now the 7.62 clip is in Laboratory;
+        now the test tube is in Laboratory;
+        now the small box is in Laboratory;
+        now the adventure letter is in Laboratory;
+        now the cat is in Laboratory;
+        now the penknife is in Laboratory;
+        now the player is in Middle of Nowhere;
+    end if.
 
-[the reading check has nesting punctuation errors. Must fix, and the AK47 works]
+[The real game. Everything above can be discarded once I've got this good enough. Some stuff above might need to be kept -> SO PAY ATTENTION! ][
+stat bars        -hunger/thirst/temp (player/desert)
+possible threats - sandstorms, scorpions, snakes, tornadoes?, flash floods?
+food sources     - must google desert flora/fauna
+water sources    - cacti, rain?, blood?, dew, google some more.
+Temp. control    - include various clothes and crafting w/ skin/feathers/animal hides
+mission          - rescue or survive several months. obviously rescue is the real goal.
+fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
+locations        - caverns, cliffs, dried out river, a rain shadow (mountains then sea)]
+
+[descriptions to use later
+The sun beats down on the hot sands.
+The heat of the desert oppresses the scant amount of life.
+The area appears to be an erg, or a sand sea. ]
+
+Middle of Nowhere is a room.
+The printed name of Middle of Nowhere is "The Middle of Nowhere".
+The description of Middle of Nowhere is "The vast desert stretches around you. To the east lies a mountain range.".
+
+East of Middle of Nowhere is Swirling Sands.
+The description of Swirling Sands is "The winds slowly drift sand across the dunes. To the east, mountains await.".
+
+East of Swirling Sands is Mountain Base.
+The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northwest.".
+
