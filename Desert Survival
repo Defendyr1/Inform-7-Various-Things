@@ -1,0 +1,85 @@
+"Desert Survival"
+
+[stops game from blurting out container contents while container is closed]
+Rule for printing room description details of a closed container:
+    stop.
+Rule for printing the name of a closed container (called C) while taking inventory:
+    say "[printed name of C]";
+    omit contents in listing.
+
+[allows reading books and stuff]
+A thing has some text called reading-material.
+The reading-material of a thing is usually "".
+Understand the command "read" as something new.
+Reading is an action applying to one thing and requiring light.
+Understand "read [something]" as reading.
+A check reading rule:
+    if the reading-material of the noun is "" begin;
+        try examining the noun instead;
+    end if.
+Carry out reading:
+    say "[reading-material of the noun]".
+
+[Hunger, thirst, health, temperatures of desert & player]
+Health is a number that varies.
+Health is initially 100. [100/100 health]
+
+Hunger is a number that varies.
+Hunger is initially 0. [0/100 hunger. 100/100 will kill.]
+
+Thirst is a number that varies.
+Thirst is initially 0. [0/100 thirst. 100/100 will kill.]
+
+PlayerTemp is a number that varies.
+PlayerTemp is initially 99. [In degrees Fahrenheit, avg. body temp is 98.6. I had to round up.]
+[Heatstroke happens at 104 F. ]
+
+DesertTemp is a number that varies.
+DesertTemp is initially 86. [Sahara desert temps - 86-117 F at day, 23-26 F at night.]
+
+
+[creates a line break function]
+To LB:
+    say "[line break]".
+
+[when play begins stuff.]
+When play begins:
+    now the command prompt is "Hello. [line break] >"; [command prompt shows health, hunger, thirst, temperatures, etc]
+    say "You wake up in the middle of nowhere. Remembering nothing, you must survive and find rescue."; [intro to story]
+    LB. [the line break function in use]
+
+[stat bars        -hunger/thirst/temp (player/desert)
+possible threats - sandstorms, scorpions, snakes, tornadoes?, flash floods?
+food sources     - must google desert flora/fauna
+water sources    - cacti, rain?, blood?, dew, google some more.
+Temp. control    - include various clothes and crafting w/ skin/feathers/animal hides
+mission          - rescue or survive several months. obviously rescue is the real goal.
+fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
+locations        - caverns, cliffs, dried out river, a rain shadow (mountains then sea)]
+
+[descriptions to use later
+The sun beats down on the hot sands.
+The heat of the desert oppresses the scant amount of life.
+The area appears to be an erg, or a sand sea. ]
+
+Middle of Nowhere is a room.
+The printed name of Middle of Nowhere is "The Middle of Nowhere".
+The description of Middle of Nowhere is "The vast desert stretches around you. To the east lies a mountain range.".
+
+Swirling Sands is east of Middle of Nowhere.
+The description of Swirling Sands is "The winds slowly drift sand across the dunes. To the east, mountains await.".
+
+Mountain Base is east of Swirling Sands.
+The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northeast.".
+Instead of going east in Mountain Base:
+    say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
+Instead of going up in Mountain Base:
+    say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
+
+Cave is northeast of Mountain Base.
+The description of Cave is "A cave hidden under the mountain, with a passage deep down into the underground.".
+Cave is dark. [Now Cave is lit]
+
+Ocean Beachside is east of Mountain Base.
+The description of Ocean Beachside is "The sounds of the sea are radically different from the silence of the desert. The ocean is as barren as the desert, but underneath lies a multitude of oceanic life."
+
