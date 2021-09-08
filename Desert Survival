@@ -29,7 +29,9 @@ A thing has a number called drinkAmt. The drinkAmt of a thing is usually 0. [rep
 Section 3 - Actual Gameplay Rules
 
 When play begins:
-    say "You wake up in the middle of nowhere. Remembering nothing, you must survive and find rescue.[LB]". [intro to story]
+    say "       A letter had shown up in your mailbox. Pulling it out, it was a simple pure white card embossed in gold with words asking for your arrival for an amazing night you would never forget. In smaller print below, it printed the address: Cairo, Egypt. You dismissed the card, and you really didn't care. But another letter showed up, confirming its authenticity... and that this was fully paid for. Excited, you reserved your spot for this Egyptian enigma. A short plane ride away, you would be in another country.[LB]";
+    say "       You fell asleep in your first class plane. You startled yourself awake, finding yourself at night over the desert. And just as you convinced yourself everything was all right, the engines exploded. The plane glided, trailing streams of smoke for a short, stressful period of time. And then it hit the ground.[LB]";
+    say "       The plane smashed into the sand, demolishing the wings and leaving them behind as it buried itself in the sand. Everyone had died on impact, or shortly after, bleeding out or dying from shock at the sudden speed of everyone's demise. Yet one person survived, crawling out of the wreckage, and staggering away from the steel monument to death, hoping to find survival in the bleakest environments.[LB]".
 
 [stops game from blurting out container contents while container is closed]
 Rule for printing room description details of a closed container: stop.
