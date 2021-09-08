@@ -51,14 +51,14 @@ When play begins:
     say "You wake up in the middle of nowhere. Remembering nothing, you must survive and find rescue."; [intro to story]
     LB. [the line break function in use]
 
-[stat bars        -hunger/thirst/temp (player/desert)
+[stat bars        -hunger/thirst
 possible threats - sandstorms, scorpions, snakes, tornadoes?, flash floods?
 food sources     - must google desert flora/fauna
 water sources    - cacti, rain?, blood?, dew, google some more.
 Temp. control    - include various clothes and crafting w/ skin/feathers/animal hides
 mission          - rescue or survive several months. obviously rescue is the real goal.
 fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
-locations        - caverns, cliffs, dried out river, a rain shadow (mountains then sea)]
+locations        - caverns, cliffs, dried out river,]
 
 [descriptions to use later
 The sun beats down on the hot sands.
@@ -87,5 +87,8 @@ Ocean Beachside is east of Mountain Base.
 The description of Ocean Beachside is "The sounds of the sea are radically different from the silence of the desert. The ocean is as barren as the desert, but underneath lies a multitude of oceanic life."
 
 
-[Add a time of day variable. Move player status variables to a new command called CheckingStatus.]
-[add a pyramid and shift to an rpg exploring the pyramid/tomb? remove specific hunger/thirst/temp annoyances and simplify them. edit to remove desert temp and player temp, and add the time of day. include weapons, mummy enemies, and the pharoah boss enemy.]
+[Add a time of day variable.]
+[add a pyramid and shift to an rpg exploring the pyramid/tomb? ]
+[remove specific hunger/thirst/temp annoyances and simplify them. 
+editing: add the time of day variable, edit map
+include weapons, mummy enemies, and the pharoah boss enemy.]
