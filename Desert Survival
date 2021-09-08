@@ -23,10 +23,12 @@ Hunger is a number that varies. Hunger is initially 0. [100/100 is bad]
 Thirst is a number that varies. Thirst is initially 0. [100/100 is bad]
 A thing has some text called reading-material. 
 The reading-material of a thing is usually "". [See Actions, reading.]
-A thing has a number called foodAmt. The foodAmt of a thing is usually 0. [replenishes X food]
-A thing has a number called drinkAmt. The drinkAmt of a thing is usually 0. [replenishes X water]
 
-Section 3 - Actual Gameplay Rules
+Section 3 - Food Items
+
+Section 4 - Weapons
+
+Section 5 - Actual Gameplay Rules
 
 When play begins:
     say "       A letter had shown up in your mailbox. Pulling it out, it was a simple pure white card embossed in gold with words asking for your arrival for an amazing night you would never forget. In smaller print below, it printed the address: Cairo, Egypt. You dismissed the card, and you really didn't care. But another letter showed up, confirming its authenticity... and that this was fully paid for. Excited, you reserved your spot for this Egyptian enigma. A short plane ride away, you would be in another country.[LB]";
@@ -46,13 +48,7 @@ After doing anything other than CheckingStatus or looking or eating or drinking:
         now thirst is thirst + 1;
     end if.
 
-After eating: now hunger is hunger - foodAmt;
-    if hunger < 0 begin; now hunger is 0; end if.
-
-After drinking: now thirst is thirst - drinkAmt;
-    if thirst < 0 begin; now thirst is 0; end if.
-
-Section 4 - Rooms
+Section 6 - Rooms
 
 Middle of Nowhere is a room.
 The printed name of Middle of Nowhere is "The Middle of Nowhere".
@@ -74,6 +70,10 @@ The description of Old Bones is "Sun bleached bones lay scattered across the san
 Section Number Last ----> To Do List
 
 Nameless Room is a room. The description is "You should not be here.". [Storage for items.]
+
+[ NOTES
+For food/water items, do operations on Thirst/Hunger variables directly. So, put 'now thirst is thirst -10' or stuff like that.
+]
 
 [
 stat bars        - time
