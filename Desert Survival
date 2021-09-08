@@ -27,21 +27,13 @@ Hunger is a number that varies.
 Hunger is initially 0. [0/100 hunger. 100/100 will kill.]
 Thirst is a number that varies.
 Thirst is initially 0. [0/100 thirst. 100/100 will kill.]
-PlayerTemp is a number that varies.
-PlayerTemp is initially 98. [Heatstroke happens at 104 F. ]
-DesertTemp is a number that varies.
-DesertTemp is initially 86. [Sahara desert temps -> 86-117 F at day, 23-26 F at night.]
 
 To LB: [creates a line break function]
     say "[line break]".
 
-An every turn rule: [Desert Temp]
-    let x be a random number between 86 and 117;
-    now DesertTemp is x.
-
 An every turn rule: [auto starve/thirst]
 [instead of doing anything other that CheckingStatus or looking:]
-    let x be a random number between 1 and 10;
+    let x be a random number between 1 and 8;
     if x is 1 begin;
         now hunger is hunger + 1;
     otherwise;
@@ -51,18 +43,11 @@ An every turn rule: [auto starve/thirst]
 CheckingStatus is an action applying to nothing.
 Understand "check status" or "status check" or "status" or "check" or "sc" as CheckingStatus.
 Instead of CheckingStatus:
-    say "Status checked.".
-
-[irl hunger in 3 stages - fat breakdown, extreme fat breakdown (weeks), then protein/muscle breakdown
-thirst - Most people can tolerate a 3-4% decrease in total body water without difficulty or adverse health effects. A 5-8% decrease can cause fatigue and dizziness. Loss of over ten percent of total body water can cause physical and mental deterioration, accompanied by severe thirst. Death occurs at a loss of between fifteen and twenty-five percent of the body water.
-8-21 days without food & water
-21-40 days with adequate water
-idk how long w/o water. Assume a random number between 3-5 days.
-]
+    say "[line break]Health: [health]/100[line break]Hunger: [hunger]/100[line break]Thirst: [thirst]/100 [roman type][line break]".
 
 [when play begins stuff.]
 When play begins:
-    now the command prompt is "[line break][italic type]Health: [health]/100 || Hunger: [hunger]/100 || Thirst: [thirst]/100 || PlayerTemp: [PlayerTemp] || DesertTemp: [DesertTemp][roman type][line break]>>"; [command prompt shows health, hunger, thirst, temperatures, etc]
+    now the command prompt is ">>";
     say "You wake up in the middle of nowhere. Remembering nothing, you must survive and find rescue."; [intro to story]
     LB. [the line break function in use]
 
