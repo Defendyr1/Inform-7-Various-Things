@@ -24,9 +24,26 @@ Thirst is a number that varies. Thirst is initially 0. [100/100 is bad]
 A thing has some text called reading-material. 
 The reading-material of a thing is usually "". [See Actions, reading.]
 
-Section 3 - Food Items
+Section 3 - Items
 
-Section 4 - Weapons
+[food
+ALL cactus fruits are edible
+Abal flower
+acacia leaves, flower, pod
+agave flower
+date palm
+desert amaranth
+desert raisin
+]
+
+[water
+life = water
+water flows DOWN
+dew
+old riverbeds - dig
+bag around a plant- plants release water, and it runs down
+]
+Section 4 - NPCs and Scenes
 
 Section 5 - Actual Gameplay Rules
 
