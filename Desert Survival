@@ -1,94 +1,88 @@
 "Desert Survival"
 
-[stops game from blurting out container contents while container is closed]
-Rule for printing room description details of a closed container:
-    stop.
-Rule for printing the name of a closed container (called C) while taking inventory:
-    say "[printed name of C]";
-    omit contents in listing.
-
-[allows reading books and stuff]
-A thing has some text called reading-material.
-The reading-material of a thing is usually "".
-Understand the command "read" as something new.
-Reading is an action applying to one thing and requiring light.
-Understand "read [something]" as reading.
-A check reading rule:
-    if the reading-material of the noun is "" begin;
-        try examining the noun instead;
-    end if.
-Carry out reading:
-    say "[reading-material of the noun]".
-
-[Hunger, thirst, health, temperatures of desert & player]
-Health is a number that varies.
-Health is initially 100. [100/100 health]
-Hunger is a number that varies.
-Hunger is initially 0. [0/100 hunger. 100/100 will kill.]
-Thirst is a number that varies.
-Thirst is initially 0. [0/100 thirst. 100/100 will kill.]
-
-To LB: [creates a line break function]
-    say "[line break]".
-
-An every turn rule: [auto starve/thirst]
-[instead of doing anything other that CheckingStatus or looking:]
-    let x be a random number between 1 and 8;
-    if x is 1 begin;
-        now hunger is hunger + 1;
-    otherwise;
-        now thirst is thirst + 1;
-    end if.
+Section 1 - Actions
 
 CheckingStatus is an action applying to nothing.
 Understand "check status" or "status check" or "status" or "check" or "sc" as CheckingStatus.
-Instead of CheckingStatus:
-    say "[line break]Health: [health]/100[line break]Hunger: [hunger]/100[line break]Thirst: [thirst]/100 [roman type][line break]".
+Instead of CheckingStatus: say "Health: [health]/100 [LB]Hunger: [hunger]/100 [LB]Thirst: [thirst]/100 [LB]".
 
-[when play begins stuff.]
+Understand the command "read" as something new. [See Variables, reading-material]
+Reading is an action applying to one thing and requiring light.
+Understand "read [something]" as reading.
+A check reading rule: [examines noun if no reading-material]
+    if the reading-material of the noun is "" begin;
+        try examining the noun instead; end if.
+Carry out reading: say "[reading-material of the noun]". [reads the reading-material]
+
+To say LB: say "[line break]". [creates a line break function. type [LB] in quotes]
+
+Section 2 - Variables
+
+Health is a number that varies. Health is initially 100. [100/100 is good]
+Hunger is a number that varies. Hunger is initially 0. [100/100 is bad]
+Thirst is a number that varies. Thirst is initially 0. [100/100 is bad]
+A thing has some text called reading-material. 
+The reading-material of a thing is usually "". [See Actions, reading.]
+A thing has a number called foodAmt. The foodAmt of a thing is usually 0. [replenishes X food]
+A thing has a number called drinkAmt. The drinkAmt of a thing is usually 0. [replenishes X water]
+
+Section 3 - Actual Gameplay Rules
+
 When play begins:
-    now the command prompt is ">>";
-    say "You wake up in the middle of nowhere. Remembering nothing, you must survive and find rescue."; [intro to story]
-    LB. [the line break function in use]
+    say "You wake up in the middle of nowhere. Remembering nothing, you must survive and find rescue.[LB]". [intro to story]
 
-[stat bars        -hunger/thirst
-possible threats - sandstorms, scorpions, snakes, tornadoes?, flash floods?
-food sources     - must google desert flora/fauna
-water sources    - cacti, rain?, blood?, dew, google some more.
-Temp. control    - include various clothes and crafting w/ skin/feathers/animal hides
-mission          - rescue or survive several months. obviously rescue is the real goal.
-fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
-locations        - caverns, cliffs, dried out river,]
+[stops game from blurting out container contents while container is closed]
+Rule for printing room description details of a closed container: stop.
+Rule for printing the name of a closed container (called C) while taking inventory:
+    say "[printed name of C]"; omit contents in listing.
 
-[descriptions to use later
-The sun beats down on the hot sands.
-The heat of the desert oppresses the scant amount of life.
-The area appears to be an erg, or a sand sea. ]
+After doing anything other than CheckingStatus or looking or eating or drinking:
+    let x be a random number between 1 and 8;
+    if x is 1 begin; [auto starve]
+        now hunger is hunger + 1;
+    otherwise; [auto thirst]
+        now thirst is thirst + 1;
+    end if.
+
+After eating: now hunger is hunger - foodAmt;
+    if hunger < 0 begin; now hunger is 0; end if.
+
+After drinking: now thirst is thirst - drinkAmt;
+    if thirst < 0 begin; now thirst is 0; end if.
+
+Section 4 - Rooms
 
 Middle of Nowhere is a room.
 The printed name of Middle of Nowhere is "The Middle of Nowhere".
-The description of Middle of Nowhere is "The vast desert stretches around you. To the east lies a mountain range.".
+The description of Middle of Nowhere is "The vast desert stretches around you. The sand and sun are the only constants in this arid world.".
 
 Swirling Sands is east of Middle of Nowhere.
-The description of Swirling Sands is "The winds slowly drift sand across the dunes. To the east, mountains await.".
+The description of Swirling Sands is "The winds slowly drift sand across the dunes, long and linear.".
 
-Mountain Base is east of Swirling Sands.
-The description of Mountain Base is "A familiar figure stands tall above you: the mountain range. Under the shadow of this mountain lies a cave to the northeast.".
-Instead of going east in Mountain Base:
-    say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
-Instead of going up in Mountain Base:
-    say "The mountain bars your passage. It is too steep for you to climb, sidestep or pass through the mountain. Yet the mountain isn't as solid as it seems.".
+Deep Crevasse is west of Middle of Nowhere.
+The description of Deep Crevasse is "A deep crevasse opens up below, the sand sometimes blowing down the dark crack in the desert.".
 
-Cave is northeast of Mountain Base.
-The description of Cave is "A cave hidden under the mountain, with a passage deep down into the underground.".
-Cave is dark. [Now Cave is lit]
+Desertion is north of Middle of Nowhere.
+The description of Desertion is "An empty wasteland, where nothing is alive. It seems life itself has deserted this place.".
 
-Ocean Beachside is east of Mountain Base.
-The description of Ocean Beachside is "The sounds of the sea are radically different from the silence of the desert. The ocean is as barren as the desert, but underneath lies a multitude of oceanic life."
+Old Bones is south of Middle of Nowhere.
+The description of Old Bones is "Sun bleached bones lay scattered across the sands, half buried and forgotten by time.".
 
 
-[Add a time of day variable.]
-[add a pyramid and shift to an rpg exploring the pyramid/tomb? ]
-[remove specific hunger/thirst/temp annoyances and simplify them. 
-editing: add the time of day variable, edit map
-include weapons, mummy enemies, and the pharoah boss enemy.]
+Section Number Last ----> To Do List
+
+Nameless Room is a room. The description is "You should not be here.". [Storage for items.]
+
+[
+stat bars        - time
+possible threats - sandstorms, scorpions, snakes, 
+food sources     - must google desert flora/fauna
+water sources    - cacti, rain?, blood?, dew, google some more.
+mission          - rescue (survival win) or defeat pharaoh (rpg win)
+fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
+locations        - caverns, cliffs, dried out river,
+
+write good intro for story
+add a pyramid/tomb and shift to an rpg exploring the pyramid/tomb? 
+include weapons, mummy enemies, and the pharoah boss enemy for rpg
+]
