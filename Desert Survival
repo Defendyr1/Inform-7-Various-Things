@@ -16,6 +16,9 @@ Carry out reading: say "[reading-material of the noun]". [reads the reading-mate
 
 To say LB: say "[line break]". [creates a line break function. type [LB] in quotes]
 
+Xyzzying is an action applying to nothing. Understand "xyzzy" as xyzzying.
+Instead of xyzzying: now the player is in Nameless Room. [Helps debug issues]
+    
 Section 2 - Variables
 
 Health is a number that varies. Health is initially 100. [100/100 is good]
@@ -23,24 +26,71 @@ Hunger is a number that varies. Hunger is initially 0. [100/100 is bad]
 Thirst is a number that varies. Thirst is initially 0. [100/100 is bad]
 A thing has some text called reading-material. 
 The reading-material of a thing is usually "". [See Actions, reading.]
-A thing has a number called quantity. 
-The quantity of a thing is usually 1. [number of items]
 
 Section 3 - Items
+
 A foodstuff is a kind of thing. A foodstuff is edible.
+[foraged food  (greenery)
+ rotting meat  (old, gross meat)
+ cooked greens (cooked foraged food)
+ raw meat      (raw meat)
+ cooked meat   (cooked meat)]
 
 A foraged food is a foodstuff. 
+A foraged food is in Middle of Nowhere.
+The indefinite article of foraged food is "some".
+The description of a foraged food is "Some wild greens, covered in spines. While not very common, these will prolong your life in the unbearable desert.".
+After eating or drinking a foraged food:
+    let x be a random number between 1 and 15;
+    let y be a random number between 1 and 15;
+    now hunger is hunger - x;
+    now thirst is thirst - y;
+    if hunger < 0 begin; now hunger is 0; end if;
+    if thirst < 0 begin; now thirst is 0; end if.
+    now foraged food is in Nameless Room.
+    
+A rotting meat is a foodstuff.
+The indefinite article of rotting meat is "some".
+The decription of a rotting meat is "Some dead meat. Now, all meat is dead, but this is the [italic type]gross[roman type] type of dead. Might be edible.".
+After eating or drinking a rotting meat:
+    let x be a random number between 0 and 20;
+    let y be a random number between 0 and 20;
+    now hunger is hunger - x;
+    now thirst is thirst - y;
+    if hunger < 0 begin; now hunger is 0; end if;
+    if thirst < 0 begin; now thirst is 0; end if;
+    let y be a random number between 10 and 40;
+    now health is health - y;
+    if health < 0 begin;
+        say "After the meat touches your lips, you feel some apprehension at consuming the gross, bloody meat. But it is too late. You go about your business for some time, until you are wracked by violent sickness, and you are unable to recover. You kneel, watching as your life leaves you from unknown infection.".
+        end the story saying "Maybe you shouldn't eat this next time. It is useful, though."; 
+        end if;
+    now rotting meat is in Nameless Room.
+    
+A cooked greens is a foodstuff.
+The indefinite article of cooked greens is "some".
+The description of cooked greens is "Some cooked greenery. Pretty healthy, and nutritious too.".
+After eating or drinking a cooked greens:
+    let x be a random number between 10 and 30;
+    let y be a random number between 10 and 30;
+    now hunger is hunger - x;
+    now thirst is thirst - y;
+    if hunger < 0 begin; now hunger is 0; end if;
+    if thirst < 0 begin; now thirst is 0; end if;
+    now cooked greens is in Nameless Room.
 
-[water
-life = water
-water flows DOWN
-dew
-old riverbeds - dig
-bag around a plant- plants release water, and it runs down
-]
-Section 4 - NPCs and Scenes
+[add raw meat, cooked meat]
 
-Section 5 - Actual Gameplay Rules
+[water sources
+life = water, water flows DOWN, rain (duh)
+dew, old riverbeds - dig
+bag around a plant- plants release water, and it runs down]
+
+Section 4 - Scenery
+
+Section 5 - NPCs and Scenes
+
+Section 6 - Actual Gameplay Rules
 
 When play begins:
     say "       A letter had shown up in your mailbox. Pulling it out, it was a simple pure white card embossed in gold with words asking for your arrival for an amazing night you would never forget. In smaller print below, it printed the address: Cairo, Egypt. You dismissed the card, and you really didn't care. But another letter showed up, confirming its authenticity... and that this was fully paid for. Excited, you reserved your spot for this Egyptian enigma. A short plane ride away, you would be in another country.[LB]";
@@ -60,7 +110,7 @@ Before doing anything other than CheckingStatus or looking or eating or drinking
         now thirst is thirst + 1;
     end if.
 
-Section 6 - Rooms
+Section 7 - Rooms
 
 Middle of Nowhere is a room.
 The printed name of Middle of Nowhere is "The Middle of Nowhere".
@@ -78,14 +128,9 @@ The description of Desertion is "An empty wasteland, where nothing is alive. It 
 Old Bones is south of Middle of Nowhere.
 The description of Old Bones is "Sun bleached bones lay scattered across the sands, half buried and forgotten by time.".
 
-
 Section Number Last ----> To Do List
 
 Nameless Room is a room. The description is "You should not be here.". [Storage for items.]
-
-[ NOTES
-For food/water items, do operations on Thirst/Hunger variables directly. So, put 'now thirst is thirst -10' or stuff like that.
-]
 
 [
 stat bars        - time
