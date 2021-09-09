@@ -23,12 +23,22 @@ Hunger is a number that varies. Hunger is initially 0. [100/100 is bad]
 Thirst is a number that varies. Thirst is initially 0. [100/100 is bad]
 A thing has some text called reading-material. 
 The reading-material of a thing is usually "". [See Actions, reading.]
+A thing has a number called quantity. 
+The quantity of a thing is usually 1. [number of items]
 
 Section 3 - Items
+[
+A cactus fruit is a thing. A cactus fruit is edible.
+The description of a cactus fruit is "A fruit, with a variety of hues from green to bright red, protruding with small spines called glochids.".
+Before eating the cactus fruit:
+    say "You carefully remove the spines, and peel off the skin. Deliciously sweet and juicy.".
+After eating the cactus fruit:
+    now hunger is hunger - 5;
+    now thirst is thirst - 10.
 
+An acacia pod is a thing. An acacia pod is edible.
+]
 [food
-ALL cactus fruits are edible
-Abal flower
 acacia leaves, flower, pod
 agave flower
 date palm
@@ -57,7 +67,7 @@ Rule for printing room description details of a closed container: stop.
 Rule for printing the name of a closed container (called C) while taking inventory:
     say "[printed name of C]"; omit contents in listing.
 
-After doing anything other than CheckingStatus or looking or eating or drinking:
+Before doing anything other than CheckingStatus or looking or eating or drinking:
     let x be a random number between 1 and 8;
     if x is 1 begin; [auto starve]
         now hunger is hunger + 1;
