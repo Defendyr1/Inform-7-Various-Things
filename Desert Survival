@@ -50,8 +50,9 @@ After eating or drinking a foraged food:
     now foraged food is in Nameless Room.
     
 A rotting meat is a foodstuff.
+A rotting meat is in Middle of Nowhere.
 The indefinite article of rotting meat is "some".
-The decription of a rotting meat is "Some dead meat. Now, all meat is dead, but this is the [italic type]gross[roman type] type of dead. Might be edible.".
+The description of a rotting meat is "Some dead meat. Now, all meat is dead, but this is the [italic type]gross[roman type] type of dead. Might be edible.".
 After eating or drinking a rotting meat:
     let x be a random number between 0 and 20;
     let y be a random number between 0 and 20;
@@ -62,12 +63,13 @@ After eating or drinking a rotting meat:
     let y be a random number between 10 and 40;
     now health is health - y;
     if health < 0 begin;
-        say "After the meat touches your lips, you feel some apprehension at consuming the gross, bloody meat. But it is too late. You go about your business for some time, until you are wracked by violent sickness, and you are unable to recover. You kneel, watching as your life leaves you from unknown infection.".
-        end the story saying "Maybe you shouldn't eat this next time. It is useful, though."; 
+        say "[LB]       After the meat touches your lips, you feel some apprehension at consuming the gross, bloody meat. But it is too late. You go about your business for some time, until you are wracked by violent sickness, and you are unable to recover. You kneel, watching as your life leaves you from unknown infection.";
+        end the story saying "Maybe you shouldn't eat this next time. It is useful, though.";
         end if;
     now rotting meat is in Nameless Room.
     
 A cooked greens is a foodstuff.
+A cooked greens is in Middle of Nowhere.
 The indefinite article of cooked greens is "some".
 The description of cooked greens is "Some cooked greenery. Pretty healthy, and nutritious too.".
 After eating or drinking a cooked greens:
