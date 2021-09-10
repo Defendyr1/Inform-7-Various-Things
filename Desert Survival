@@ -34,7 +34,8 @@ A foodstuff is a kind of thing. A foodstuff is edible.
  rotting meat  (old, gross meat)
  cooked greens (cooked foraged food)
  raw meat      (raw meat)
- cooked meat   (cooked meat)]
+ cooked meat   (cooked meat)
+ We only have eating effects right now.]
 
 A foraged food is a foodstuff. 
 A foraged food is in Middle of Nowhere.
@@ -81,7 +82,42 @@ After eating or drinking a cooked greens:
     if thirst < 0 begin; now thirst is 0; end if;
     now cooked greens is in Nameless Room.
 
-[add raw meat, cooked meat]
+A raw meat is a foodstuff.
+A raw meat is in Middle of Nowhere.
+The indefinite article of raw meat is "some".
+The description of raw meat is "Some raw meat, from some animal. Possible parasites within. Best to COOK over a fire."
+After eating or drinking a raw meat:
+    let x be a random number between 1 and 20;
+    let y be a random number between 1 and 10;
+    now hunger is hunger - x;
+    now thirst is thirst - y;
+    if hunger < 0 begin; now hunger is 0; end if;
+    if thirst < 0 begin; now thirst is 0; end if;
+    let z be a random number between 0 and 100;
+    if z < 15 begin;
+        say "You don't feel so good...";
+        now health is health - 30;
+        if health < 0 begin;
+            say "[LB]       After the meat touches your lips, you feel some apprehension at consuming the bloody meat. But it is too late. You go about your business for some time, until you are wracked by violent sickness, and you are unable to recover. You kneel, watching as your life leaves you from unknown parasites.";
+            end the story saying "The worms ate you from within.";
+            end if;
+    end if;
+    now raw meat is in Nameless Room.
+
+A cooked meat is a foodstuff.
+A cooked meat is in Middle of Nowhere.
+The indefinite article of raw meat is "some".
+The description of raw meat is "Some cooked meat, from some animal. It's like wannabe steak."
+After eating or drinking a cooked meat:
+    let x be a random number between 10 and 30;
+    let y be a random number between 10 and 20;
+    now hunger is hunger - x;
+    now thirst is thirst - y;
+    if hunger < 0 begin; now hunger is 0; end if;
+    if thirst < 0 begin; now thirst is 0; end if;
+    let z be a random number between 0 and 20;
+    now health is health + z;
+    now cooked meat is in Nameless Room.
 
 [water sources
 life = water, water flows DOWN, rain (duh)
