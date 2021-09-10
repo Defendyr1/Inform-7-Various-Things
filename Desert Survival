@@ -124,11 +124,13 @@ life = water, water flows DOWN, rain (duh)
 dew, old riverbeds - dig
 bag around a plant- plants release water, and it runs down]
 
-Section 4 - Scenery
+Section 4 - Scenes & Scenery
 
-Section 5 - NPCs and Scenes
+Section 5 - NPCs
 
 Section 6 - Actual Gameplay Rules
+
+The player description is "You don't have a mirror. You're still as good looking as ever, though.".
 
 When play begins:
     say "       A letter had shown up in your mailbox. Pulling it out, it was a simple pure white card embossed in gold with words asking for your arrival for an amazing night you would never forget. In smaller print below, it printed the address: Cairo, Egypt. You dismissed the card, and you really didn't care. But another letter showed up, confirming its authenticity... and that this was fully paid for. Excited, you reserved your spot for this Egyptian enigma. A short plane ride away, you would be in another country.[LB]";
@@ -170,10 +172,18 @@ Section Number Last ----> To Do List
 
 Nameless Room is a room. The description is "You should not be here.". [Storage for items.]
 
-[
+[ Pharaoh, but not implemented follows below
+Pharaoh is a man. "The pharaoh rests, waiting.".
+Pharaoh is in Nameless Room.
+The description of Pharaoh is "A golden king.".
+
+Every turn: [random movement]
+    let D be a random direction;
+    try Pharaoh going D.
+
+xtra stuff now
 stat bars        - time
 possible threats - sandstorms, scorpions, snakes, 
-food sources     - must google desert flora/fauna
 water sources    - cacti, rain?, blood?, dew, google some more.
 mission          - rescue (survival win) or defeat pharaoh (rpg win)
 fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
