@@ -198,8 +198,12 @@ locations        - caverns, cliffs, dried out river,
 add a pyramid/tomb and shift to an rpg exploring the pyramid/tomb? 
 include weapons, mummy enemies, and the pharoah boss enemy for rpg
 
-dry river                   barren wasteland            aridity
-cracked sandstone           desertion                   dry sands
-deep crevasse               middle of nowwhere          rocky ground
-sheer cliff                 old bones                   twin pools
+
+
+                  dry river                   barren wasteland            aridity         cacti
+ eroded ruins     cracked sandstone           desertion                   dry sands       endless horizon
+                  deep crevasse               middle of nowwhere          rocky ground    rocky ground
+                  sheer cliff                 old bones                   twin pools      twin pools
+                                              ancient skull
+                                                      ancient tomb
 ]
