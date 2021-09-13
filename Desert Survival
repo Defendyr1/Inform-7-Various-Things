@@ -168,7 +168,13 @@ The description of Desertion is "An empty wasteland, where nothing is alive. It 
 Old Bones is south of Middle of Nowhere.
 The description of Old Bones is "Sun bleached bones lay scattered across the sands, half buried and forgotten by time.".
 
-Section Number Last ----> To Do List
+Dry River is north of Cracked Sandstone.
+The description of Dry  River is "A rather large river runs through the sands and rock to the south, but it has dried out.".
+
+Cracked Sandstone is north of Deep Crevasse.
+The description of Cracked Sandstone is "The dried out river carves its way through the cracked sandstone, creating a crevasse to the south.".
+
+Section Number Last ------> random stuff.
 
 Nameless Room is a room. The description is "You should not be here.". [Storage for items.]
 
@@ -189,7 +195,11 @@ mission          - rescue (survival win) or defeat pharaoh (rpg win)
 fun stuff        - crashed car/airplane?, attacking nomads?, an oasis?, abandoned villages and wells?
 locations        - caverns, cliffs, dried out river,
 
-write good intro for story
 add a pyramid/tomb and shift to an rpg exploring the pyramid/tomb? 
 include weapons, mummy enemies, and the pharoah boss enemy for rpg
+
+dry river                   barren wasteland            aridity
+cracked sandstone           desertion                   dry sands
+deep crevasse               middle of nowwhere          rocky ground
+sheer cliff                 old bones                   twin pools
 ]
