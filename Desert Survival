@@ -106,8 +106,8 @@ After eating or drinking a raw meat:
 
 A cooked meat is a foodstuff.
 A cooked meat is in Middle of Nowhere.
-The indefinite article of raw meat is "some".
-The description of raw meat is "Some cooked meat, from some animal. It's like wannabe steak."
+The indefinite article of cooked meat is "some".
+The description of cooked meat is "Some cooked meat, from some animal. It's like wannabe steak.".
 After eating or drinking a cooked meat:
     let x be a random number between 10 and 30;
     let y be a random number between 10 and 20;
@@ -130,7 +130,6 @@ Section 5 - NPCs
 
 Section 6 - Actual Gameplay Rules
 
-The player description is "You don't have a mirror. You're still as good looking as ever, though.".
 
 When play begins:
     say "       A letter had shown up in your mailbox. Pulling it out, it was a simple pure white card embossed in gold with words asking for your arrival for an amazing night you would never forget. In smaller print below, it printed the address: Cairo, Egypt. You dismissed the card, and you really didn't care. But another letter showed up, confirming its authenticity... and that this was fully paid for. Excited, you reserved your spot for this Egyptian enigma. A short plane ride away, you would be in another country.[LB]";
@@ -152,29 +151,53 @@ Before doing anything other than CheckingStatus or looking or eating or drinking
 
 Section 7 - Rooms
 
-Middle of Nowhere is a room.
+Dry River is north of Cracked Sandstone and west of Barren Wasteland.
+The description of Dry  River is "A rather large river runs through the sands and rock to the south, but it has dried out.".
+
+Cracked Sandstone is north of Deep Crevasse and west of Desertion.
+The description of Cracked Sandstone is "The dried out river carves its way through the cracked sandstone, creating a crevasse to the south.".
+
+Deep Crevasse is north of Sheer Cliff and west of Middle of Nowhere.
+The description of Deep Crevasse is "A deep crevasse opens up below, the sand sometimes blowing down the dark crack in the desert.".
+
+Sheer Cliff is west of Old Bones.
+The description of Sheer Cliff is "A sharp dropoff leads down to a deeo crevasse to the north. Best not to trip here, it wouldn't end well.".
+
+Barren Wasteland is north of Desertion and west of Aridity.
+The description of Barren Wasteland is "Nothing. Absolute, total, all-emcompassing nothing.".
+
+Desertion is north of Middle of Nowhere and west of Dry Sands.
+The description of Desertion is "An empty wasteland, where nothing is alive. It seems life itself has deserted this place.".
+
+Middle of Nowhere is north of Old Bones and west of Swirling Sands.
 The printed name of Middle of Nowhere is "The Middle of Nowhere".
 The description of Middle of Nowhere is "The vast desert stretches around you. The sand and sun are the only constants in this arid world.".
 
-Swirling Sands is east of Middle of Nowhere.
-The description of Swirling Sands is "The winds slowly drift sand across the dunes, long and linear.".
-
-Deep Crevasse is west of Middle of Nowhere.
-The description of Deep Crevasse is "A deep crevasse opens up below, the sand sometimes blowing down the dark crack in the desert.".
-
-Desertion is north of Middle of Nowhere.
-The description of Desertion is "An empty wasteland, where nothing is alive. It seems life itself has deserted this place.".
-
-Old Bones is south of Middle of Nowhere.
+Old Bones is west of Twin Pools.
 The description of Old Bones is "Sun bleached bones lay scattered across the sands, half buried and forgotten by time.".
 
-Dry River is north of Cracked Sandstone.
-The description of Dry  River is "A rather large river runs through the sands and rock to the south, but it has dried out.".
+Aridity is north of Dry Sands and southwest of Cacti Corner.
+The description of Aridity is "Water is nonexistent. The sands are bleached pure white and the heat haze shimmers around you.".
 
-Cracked Sandstone is north of Deep Crevasse.
-The description of Cracked Sandstone is "The dried out river carves its way through the cracked sandstone, creating a crevasse to the south.".
+Dry Sands is north of Swirling Sands and west of Endless Horizon.
+The description of Dry Sands is "Not as inhospital as the area to the north, but this is an incredibly dry place. Water is scarce here.".
 
-Section Number Last ------> random stuff.
+Swirling Sands is east of Middle of Nowhere and west of Rocky Ground.
+The description of Swirling Sands is "The winds slowly drift sand across the dunes, long and linear.".
+
+Twin Pools is south of Swirling Sands and southwest of Rocky Ground.
+The description of Twin Pools is "A rocky area, with a little valley. Down in the valley, towards the center, there are two pools, separate but close, still and beautifully clear.".
+
+Cacti Corner is northeast of Endless Horizon and northeast of Aridity.
+The description of Cacti Corner is "A little edge of the desert, populated by all sorts of rather fun cacti, some blooming with flowers, spotted with fruit, and covered in spines.".
+
+Endless Horizon is north of Rocky Ground.
+The description of Endless Horizon is "All around you, all you can see is the ground, the horizon, and the sky. And in the distance? Nothing. Nothing but the horizon, waiting for you to explore.".
+
+Rocky Ground is south of Endless Horizon.
+The description of Rocky Ground is "The sand is flecked with all sorts of rocks, providing some more traction while walking about in this desert.".
+
+Section Number Last ------> random stuff
 
 Nameless Room is a room. The description is "You should not be here.". [Storage for items.]
 
@@ -197,13 +220,4 @@ locations        - caverns, cliffs, dried out river,
 
 add a pyramid/tomb and shift to an rpg exploring the pyramid/tomb? 
 include weapons, mummy enemies, and the pharoah boss enemy for rpg
-
-
-
-                  dry river                   barren wasteland            aridity         cacti
- eroded ruins     cracked sandstone           desertion                   dry sands       endless horizon
-                  deep crevasse               middle of nowwhere          rocky ground    rocky ground
-                  sheer cliff                 old bones                   twin pools      twin pools
-                                              ancient skull
-                                                      ancient tomb
 ]
