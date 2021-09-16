@@ -18,6 +18,10 @@ To say LB: say "[line break]". [creates a line break function. type [LB] in quot
 
 Xyzzying is an action applying to nothing. Understand "xyzzy" as xyzzying.
 Instead of xyzzying: now the player is in Nameless Room. [Helps debug issues]
+
+Foraging is an action applying to nothing. Understand "forage" as foraging.
+
+Drawing is an action applying to nothing. Understand "draw water" or "draw" or "dw" or "d water" as drawing.
     
 Section 2 - Variables
 
@@ -120,10 +124,12 @@ bag around a plant- plants release water, and it runs down]
 
 Section 4 - Scenes & Scenery
 
+Oasis is scenery. Oasis is in Twin Pools. 
+The description of Oasis is "You could FORAGE or DRAW WATER to get some food or water, if you can find some. A handy source of life in a death filled world.".
+
 Section 5 - NPCs
 
 Section 6 - Actual Gameplay Rules
-
 
 When play begins:
     say "       A letter had shown up in your mailbox. Pulling it out, it was a simple pure white card embossed in gold with words asking for your arrival for an amazing night you would never forget. In smaller print below, it printed the address: Cairo, Egypt. You dismissed the card, and you really didn't care. But another letter showed up, confirming its authenticity... and that this was fully paid for. Excited, you reserved your spot for this Egyptian enigma. A short plane ride away, you would be in another country.[LB]";
@@ -191,7 +197,7 @@ Swirling Sands is east of Middle of Nowhere and west of Rocky Ground.
 The description of Swirling Sands is "The winds slowly drift sand across the dunes, long and linear.".
 
 Twin Pools is south of Swirling Sands and southwest of Rocky Ground.
-The description of Twin Pools is "A rocky area, with a little valley. Down in the valley, towards the center, there are two pools, separate but close, still and beautifully clear.".
+The description of Twin Pools is "A rocky area, with a little valley. Down in the valley, towards the center, there are two pools, separate but close, still and beautifully clear. An [bold type]oasis[roman type] is situated in the rocks, the two pools providing the much-needed water to the life nearby.".
 
 Cacti Corner is north of Endless Horizon and east of Aridity.
 The description of Cacti Corner is "A little edge of the desert, populated by all sorts of rather fun cacti, some blooming with flowers, spotted with fruit, and covered in spines.".
