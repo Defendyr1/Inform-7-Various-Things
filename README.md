@@ -1,5 +1,5 @@
-# Inform-7-Various-Things
-This is just a bunch of random experiments. I wonder if anyone'll ever see this.
+# Inform-7
+This is just a bunch of random experiments. None will escape the omnipotence of obscurity.
 
 Manichaean Evils was a first attempt at an RPG, but the combat system fell apart.
 
