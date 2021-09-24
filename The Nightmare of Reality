@@ -1,0 +1,28 @@
+"The Nightmare of Reality"
+
+Bedroom is a room.
+The description of Bedroom while the player is awake is "[if the player is awake]Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.[end if][if the player is asleep]Your old, familiar bedroom. Everything is muted into a monochromatic shade of black, grey or white. And not only that... your familiar room is rather unfamiliar. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in.[end if]".
+
+A person can be awake or asleep.
+A person is usually awake.
+
+Instead of sleeping:
+    if the player is awake begin;
+        now the player is asleep;
+        say "You decide to take a nap.";
+    else;
+        say "You're already asleep.";
+    end if;
+    try looking.
+
+Instead of waking up:
+    if the player is asleep begin;
+        now the player is awake;
+        say "You decide to wake up.";
+    else;
+        say "You're already awake.";
+    end if;
+    try looking.
+    
+Test me with "l/sleep/sleep/wake/wake".
+[so this line will allow you to type "test me" and it'll run through all the commands in the "Test me with" line above.]
