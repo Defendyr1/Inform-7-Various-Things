@@ -1,21 +1,31 @@
 "The Nightmare of Reality"
 
+Section 1 -- Reality Rooms
+
+Bedroom is a room.
+The description of Bedroom is "Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.".
+
+Section 2 -- Dreamworld Rooms
+
+DreamBedroom is a room. The printed name of DreamBedroom is "Bedroom".
+The description of DreamBedroom is "Your old, familiar bedroom. Although... everything is muted into a monochromatic shade of black, grey or white. Suddenly, our familiar room is rather unfamiliar. This isn't right. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in.".
+
+Section 3 -- Rules and Regions
+
+RealWorld is a region. Bedroom is in RealWorld.
+DreamWorld is a region. DreamBedroom is in DreamWorld
+
 When play begins:
     now the left hand status line is
         "[the player's surroundings] / [turn count]";
     now the right hand status line is "Status: [if the player is awake]Awake[else]Asleep[end if]".
 
-RealWorld is a region. Bedroom is in RealWorld.
-DreamWorld is a region. DreamBedroom is in DreamWorld
-
-Bedroom is a room.
-The description of Bedroom is "Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.".
-
-DreamBedroom is a room. The printed name of DreamBedroom is "Bedroom".
-The description of DreamBedroom is "Your old, familiar bedroom. Although... everything is muted into a monochromatic shade of black, grey or white. Suddenly, our familiar room is rather unfamiliar. This isn't right. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in.".
+Section 4 -- Conditions
 
 A person can be awake or asleep.
 A person is usually awake.
+
+Section 5 -- Actions, Reactions, and Interrupts
 
 Instead of sleeping:
     if the player is awake begin;
@@ -35,5 +45,15 @@ Instead of waking up:
         say "You're already awake.";
     end if.
     
+Section 6 -- Items
+
+Section Almost Last -- Testing and Debugging
+
 Test me with "l/sleep/sleep/wake/wake".
 [so this line will allow you to type "test me" and it'll run through all the commands in the "Test me with" line above.]
+
+Section Last -- Notes
+[Divided this into sections for easy organization]
+
+Section Post Script
+[Use this as a workspace, then go and organize when complete.]
