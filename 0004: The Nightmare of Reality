@@ -1,7 +1,18 @@
 "The Nightmare of Reality"
 
+When play begins:
+    now the left hand status line is
+        "[the player's surroundings] / [turn count]";
+    now the right hand status line is "Status: [if the player is awake]Awake[else]Asleep[end if]".
+
+RealWorld is a region. Bedroom is in RealWorld.
+DreamWorld is a region. DreamBedroom is in DreamWorld
+
 Bedroom is a room.
-The description of Bedroom while the player is awake is "[if the player is awake]Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.[end if][if the player is asleep]Your old, familiar bedroom. Everything is muted into a monochromatic shade of black, grey or white. And not only that... your familiar room is rather unfamiliar. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in.[end if]".
+The description of Bedroom is "Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.".
+
+DreamBedroom is a room. The printed name of DreamBedroom is "Bedroom".
+The description of DreamBedroom is "Your old, familiar bedroom. Although... everything is muted into a monochromatic shade of black, grey or white. Suddenly, our familiar room is rather unfamiliar. This isn't right. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in.".
 
 A person can be awake or asleep.
 A person is usually awake.
@@ -10,19 +21,19 @@ Instead of sleeping:
     if the player is awake begin;
         now the player is asleep;
         say "You decide to take a nap.";
+        now the player is in DreamBedroom;
     else;
         say "You're already asleep.";
-    end if;
-    try looking.
+    end if.
 
 Instead of waking up:
     if the player is asleep begin;
         now the player is awake;
         say "You decide to wake up.";
+        now the player is in Bedroom;
     else;
         say "You're already awake.";
-    end if;
-    try looking.
+    end if.
     
 Test me with "l/sleep/sleep/wake/wake".
 [so this line will allow you to type "test me" and it'll run through all the commands in the "Test me with" line above.]
