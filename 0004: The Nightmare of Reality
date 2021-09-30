@@ -3,12 +3,12 @@
 Section 1 -- Reality Rooms
 
 Bedroom is a room.
-The description of Bedroom is "Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.".
+The description of Bedroom is "Your old, familiar bedroom. Many memories are brought to your thinking as you glance across your room. Some clutter - well, more like beloved junk - lies about the room. It is your private sanctuary... but only when you're awake.Your bedroom's door is north.".
 
 Section 2 -- Dreamworld Rooms
 
 DreamBedroom is a room. The printed name of DreamBedroom is "Bedroom".
-The description of DreamBedroom is "Your old, familiar bedroom. Although... everything is muted into a monochromatic shade of black, grey or white. Suddenly, our familiar room is rather unfamiliar. This isn't right. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in.".
+The description of DreamBedroom is "Your old, familiar bedroom. Although... everything is muted into a monochromatic shade of black, grey or white. Suddenly, our familiar room is rather unfamiliar. This isn't right. Your anxiety grows as the room slowly freezes and a sense of insidious malaise creeps in. Your bedroom's door is north.".
 
 Section 3 -- Rules and Regions
 
@@ -50,28 +50,52 @@ Section 6 -- Items
 Section Last -- Testing, Debugging, Notes and Workspace
 
 Test me with "l/sleep/sleep/wake/wake".
-[so this line will allow you to type "test me" and it'll run through all the commands in the "Test me with" line above.]
+[so this line will allow you to type "test me"
+it'll run through all the commands in the "Test me with" line above.]
 
-A thing can be real or dreamt or unknown or both.
-[real world only, dream world only, neither, both]
-A thing is usually unknown.
+Every turn: [ a really bad way of forcing the key to stay in the dreamworld]
+    if DreamKey is carried by the player begin;
+        now DreamKey is in DreamBedroom;
+    end if.
 
-[figure out how to cycle through chara inv. to throw dreamt/real items into respective realities]
-
-DreamKey is a thing. DreamKey is dreamt. 
-The printed name of DreamKey is "the Silver Key". 
+DreamKey is a thing.
+The printed name of DreamKey is "the silver key". 
+[see "The Silver Key" by HP Lovecraft -- why not some fun horror?]
+[https://en.wikipedia.org/wiki/The_Silver_Key]
 The indefinite article of DreamKey is "the".
 Understand "sk" and "silver" and "silver key" and "dream" and "dream key" and "key" as DreamKey.
-The description of DreamKey is "A marvelously ornamented key, it is a foot long silver key to your deepest and darkest dreams.".
+The description of DreamKey is "A marvelously ornamented key, it is a twelve inch long silver key to your deepest and darkest dreams.".
+DreamKey is in DreamBedroom.
+DreamKey unlocks DreamBedroomHallwayDoor.
 
-DreamHallway is a room. DreamHallway is in Dreamworld. The printed name of DreamHallway is "Hallway".
-The description of DreamHallway is "An endless hallway leading off to unknown thoughts.".
+DreamHallway is a room. DreamHallway is in Dreamworld. 
+The printed name of DreamHallway is "Hallway".
+The description of DreamHallway is "The hallway leads off to the rest of your house. Some steps lead downstairs, and an office in to your east. Looking down the stairs, it radiates gloom, doom and despair, while the hallway seems to darken with every tick of the clock. Tick... tock.".
 DreamHallway is north of DreamBedroomHallwayDoor.
 
-DreamBedroomHallwayDoor is a scenery door. The printed name of DreamBedroomHallwayDoor is "bedroom door".
+dream grandfather clock is scenery. dream grandfather clock is in DreamHallway.
+The description of dream grandfather clock is "A large grandfather clock, the pendulum swinging. At the height of each swing, a loud and distinctive click echoes throughout the room.".
+
+DreamBedroomHallwayDoor is a scenery door. The printed name of DreamBedroomHallwayDoor is "the bedroom door".
 Understand "door", "bed door" and "bedroom door" as DreamBedroomHallwayDoor.
 DreamBedroomHallwayDoor is north of the DreamBedroom and south of the DreamHallway.
 DreamBedroomHallwayDoor is lockable and locked.
 
-DreamKey unlocks DreamBedroomHallwayDoor.
 
+
+[need Hallway, bedroom/hallway door - both in the real world with descriptions
+
+grandfather clock is scenery. grandfather clock is in Hallway.
+The description of grandfather clock is "A large grandfather clock, the pendulum swinging. At the height of each swing, a loud and distinctive click echoes throughout the room.".
+
+floor plan, top floor
+
+
+*************************
+*                       *
+*                       *
+*                       *
+*                       *
+*                       *  
+*                       *
+*************************
