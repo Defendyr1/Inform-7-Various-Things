@@ -57,3 +57,22 @@ Section Last -- Notes
 
 Section Post Script
 [Use this as a workspace, then go and organize when complete.]
+
+A thing can be real or dreamt or unknown or both.
+[real world only, dream world only, neither, both]
+A thing is usually unknown.
+
+DreamKey is a thing. DreamKey is dreamt. The printed name of DreamKey is "Silver Key".
+Understand "sk" and "silver" and "silver key" and "dream" and "dream key" as DreamKey.
+The description of DreamKey is "A marvelously ornamented key, it is a foot long silver key to your deepest and darkest dreams.".
+
+DreamHallway is a room. DreamHallway is in Dreamworld.
+The description of DreamHallway is "An endless hallway leading off to unknown thoughts.".
+DreamHallway is north of DreamBedroom.
+[
+DreamBedroomHallwayDoor is a scenery door.
+DreamBedroomHallwayDoor is north of the DreamBedroom and south of the DreamHallway.
+DreamBedroomHallwayDoor is lockable and locked.
+
+DreamKey unlocks DreamBedroomHallwayDoor.
+]
