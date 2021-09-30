@@ -47,32 +47,31 @@ Instead of waking up:
     
 Section 6 -- Items
 
-Section Almost Last -- Testing and Debugging
+Section Last -- Testing, Debugging, Notes and Workspace
 
 Test me with "l/sleep/sleep/wake/wake".
 [so this line will allow you to type "test me" and it'll run through all the commands in the "Test me with" line above.]
-
-Section Last -- Notes
-[Divided this into sections for easy organization]
-
-Section Post Script
-[Use this as a workspace, then go and organize when complete.]
 
 A thing can be real or dreamt or unknown or both.
 [real world only, dream world only, neither, both]
 A thing is usually unknown.
 
-DreamKey is a thing. DreamKey is dreamt. The printed name of DreamKey is "Silver Key".
-Understand "sk" and "silver" and "silver key" and "dream" and "dream key" as DreamKey.
+[figure out how to cycle through chara inv. to throw dreamt/real items into respective realities]
+
+DreamKey is a thing. DreamKey is dreamt. 
+The printed name of DreamKey is "the Silver Key". 
+The indefinite article of DreamKey is "the".
+Understand "sk" and "silver" and "silver key" and "dream" and "dream key" and "key" as DreamKey.
 The description of DreamKey is "A marvelously ornamented key, it is a foot long silver key to your deepest and darkest dreams.".
 
-DreamHallway is a room. DreamHallway is in Dreamworld.
+DreamHallway is a room. DreamHallway is in Dreamworld. The printed name of DreamHallway is "Hallway".
 The description of DreamHallway is "An endless hallway leading off to unknown thoughts.".
 DreamHallway is north of DreamBedroom.
-[
-DreamBedroomHallwayDoor is a scenery door.
+
+DreamBedroomHallwayDoor is a scenery door. The printed name of DreamBedroomHallwayDoor is "bedroom door".
+Understand "door", "bed door" and "bedroom door" as DreamBedroomHallwayDoor.
 DreamBedroomHallwayDoor is north of the DreamBedroom and south of the DreamHallway.
 DreamBedroomHallwayDoor is lockable and locked.
 
 DreamKey unlocks DreamBedroomHallwayDoor.
-]
+
