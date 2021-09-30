@@ -66,7 +66,7 @@ The description of DreamKey is "A marvelously ornamented key, it is a foot long 
 
 DreamHallway is a room. DreamHallway is in Dreamworld. The printed name of DreamHallway is "Hallway".
 The description of DreamHallway is "An endless hallway leading off to unknown thoughts.".
-DreamHallway is north of DreamBedroom.
+DreamHallway is north of DreamBedroomHallwayDoor.
 
 DreamBedroomHallwayDoor is a scenery door. The printed name of DreamBedroomHallwayDoor is "bedroom door".
 Understand "door", "bed door" and "bedroom door" as DreamBedroomHallwayDoor.
