@@ -2,8 +2,7 @@
 
 Section -- Code
 
-To say lb:
-    say "[line break]".
+To say lb: say "[line break]".
 
 Arena is a room.
 The description of Arena is "A pure white, empty gladitorial arena. [lb]A target dummy lies in a corner.".
@@ -13,6 +12,7 @@ The HP of Attack Dummy is 1000.
 [1,000 HP should be enough for now.]
 [especially when i need to recode the attack command]
 The description of Attack Dummy is "A training dummy, shaded a flesh color and filled with padding.".
+Understand "ad" and "dummy" and "attack d" and "a dummy" as Attack Dummy.
 
 A person has a number called HP.
 
@@ -22,7 +22,7 @@ pHP is initially 100.
 maxpHP is a number that varies.
 maxpHP is initially 100.
 
-When play begins:
+When play begins: 
     now the right hand status line is "HP: [pHP]/[maxpHP]".
 
 A thing has a number called quantity.
@@ -39,13 +39,14 @@ AK-47 is a weapon.
 AK-47 is in Arena.
 The WeaponDamage of AK-47 is 10.
 The description of AK-47 is "An AK-47.".
+Understand "ak", "47", "ak47" as the AK-47.
 
 7.62 ammo is a thing.
 7.62 ammo is ammunition.
 7.62 ammo is in Arena.
 The AmmoDamage of 7.62 ammo is 5.
 The indefinite article of 7.62 ammo is "some".
-The description of 7.62 ammo is "Some 7.62 ammo."
+The description of 7.62 ammo is "Some 7.62 ammo.".
 
 Understand the command "attack" as something new.
 Understand the command "kill" as something new.
@@ -66,6 +67,16 @@ Understand "attack [something] with [weapon]" as AttackingRedefined.
 
 Instead of AttackingRedefined:
     say "bang!". [do some fancy math math]
+
+Reloading is an action applying to one thing.
+Understand "reload [weapon]" as Reloading.
+Understand "equip [weapon]" as Reloading.
+Understand "load [weapon]" as Reloading
+
+Instead of Reloading: 
+    say "insert gun reload noise [lb]". [finish reloading later?]
+
+Section -- Fun Stuff
 
 Instead of jumping: say "Boing!".
 
