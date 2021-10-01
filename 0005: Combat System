@@ -1,11 +1,11 @@
-"Combat Experiment"
+"Combat Experiment" by Velocitas
 
 Section -- Code
 
 To say lb: say "[line break]".
 
 Arena is a room.
-The description of Arena is "A pure white, empty gladitorial arena. [lb]A target dummy lies in a corner.".
+The description of Arena is "A pure white, empty gladitorial arena.[lb]A target dummy lies in a corner.".
 
 Attack Dummy is a man in Arena.
 The HP of Attack Dummy is 1000. 
@@ -66,7 +66,12 @@ AttackingRedefined is an action applying to two things.
 Understand "attack [something] with [weapon]" as AttackingRedefined.
 
 Instead of AttackingRedefined:
-    say "bang!". [do some fancy math math]
+    say "bang!". [do some fancy math math see below]
+    
+[attack is a total number => total damage = AmmoDamage + WeaponDamage
+defense is a percentage blocked => total damage = total damage - ((defense/100) * dmg)
+decrement ammo quantity
+if ammo quantity = 0, now ammo is somewhere else.]
 
 Reloading is an action applying to one thing.
 Understand "reload [weapon]" as Reloading.
@@ -74,7 +79,9 @@ Understand "equip [weapon]" as Reloading.
 Understand "load [weapon]" as Reloading
 
 Instead of Reloading: 
-    say "insert gun reload noise [lb]". [finish reloading later?]
+    say "insert gun reload noise [lb]". 
+    [finish reloading later?]
+    [a magazine is a kind of thing, it has a number called amount held, 
 
 Section -- Fun Stuff
 
