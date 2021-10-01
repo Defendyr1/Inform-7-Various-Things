@@ -1,31 +1,77 @@
 "Combat Experiment"
-[Attempts to create an attack/defend system]
+
+Section -- Code
+
+To say lb:
+    say "[line break]".
 
 Arena is a room.
-The description of Arena is "A pure white, empty gladitorial arena.".
+The description of Arena is "A pure white, empty gladitorial arena. [lb]A target dummy lies in a corner.".
 
-[must figure out duplicate items]
+Attack Dummy is a man in Arena.
+The HP of Attack Dummy is 1000. 
+[1,000 HP should be enough for now.]
+[especially when i need to recode the attack command]
+The description of Attack Dummy is "A training dummy, shaded a flesh color and filled with padding.".
 
-Ammunition is a kind of thing.
+A person has a number called HP.
+
+pHP is a number that varies.
+pHP is initially 100.
+
+maxpHP is a number that varies.
+maxpHP is initially 100.
+
+When play begins:
+    now the right hand status line is "HP: [pHP]/[maxpHP]".
+
+A thing has a number called quantity.
+The quantity of a thing is usually 1.
+
+A ammunition is a kind of thing.
+A ammunition has a number called AmmoDamage.
+
+A weapon is a kind of thing.
+A weapon has a number called WeaponDamage.
+
+AK-47 is a thing.
+AK-47 is a weapon.
+AK-47 is in Arena.
+The WeaponDamage of AK-47 is 10.
+The description of AK-47 is "An AK-47.".
 
 7.62 ammo is a thing.
 7.62 ammo is ammunition.
 7.62 ammo is in Arena.
+The AmmoDamage of 7.62 ammo is 5.
 The indefinite article of 7.62 ammo is "some".
 The description of 7.62 ammo is "Some 7.62 ammo."
 
-[synonyms for the command "attack [something]"
-*must redefine attack to "attack [something] with [weapon]
-attack
-break
-crack
-destroy
-fight
-hit 
-kill
-murder
-punch
-smash
-thump
-torture
-wreck]
+Understand the command "attack" as something new.
+Understand the command "kill" as something new.
+Understand the command "destroy" as something new.
+Understand the command "break" as something new.
+Understand the command "murder" as something new.
+Understand the command "smash" as something new.
+Understand the command "crack" as something new.
+Understand the command "punch" as something new.
+Understand the command "fight" as something new.
+Understand the command "thump" as something new.
+Understand the command "hit" as something new.
+Understand the command "torture" as something new.
+Understand the command "wreck" as something new.
+
+AttackingRedefined is an action applying to two things.
+Understand "attack [something] with [weapon]" as AttackingRedefined.
+
+Instead of AttackingRedefined:
+    say "bang!". [do some fancy math math]
+
+Instead of jumping: say "Boing!".
+
+Section -- Notes
+[
+Attempts to create an attack/defend system
+must figure out duplicate items
+do leveling up?
+]
