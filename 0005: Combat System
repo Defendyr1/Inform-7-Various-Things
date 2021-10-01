@@ -2,3 +2,26 @@
 [Attempts to create an attack/defend system]
 
 Arena is a room.
+
+[must figure out duplicate items]
+
+Ammunition is a kind of thing.
+
+7.62 ammo is a thing.
+7.62 ammo is ammunition.
+7.62 ammo is in Arena.
+
+[synonyms for the command "attack"
+attack [something]
+break
+crack
+destroy
+fight
+hit 
+kill
+murder
+punch
+smash
+thump
+torture
+wreck]
