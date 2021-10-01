@@ -2,6 +2,7 @@
 [Attempts to create an attack/defend system]
 
 Arena is a room.
+The description of Arena is "A pure white, empty gladitorial arena.".
 
 [must figure out duplicate items]
 
@@ -10,9 +11,12 @@ Ammunition is a kind of thing.
 7.62 ammo is a thing.
 7.62 ammo is ammunition.
 7.62 ammo is in Arena.
+The indefinite article of 7.62 ammo is "some".
+The description of 7.62 ammo is "Some 7.62 ammo."
 
-[synonyms for the command "attack"
-attack [something]
+[synonyms for the command "attack [something]"
+*must redefine attack to "attack [something] with [weapon]
+attack
 break
 crack
 destroy
