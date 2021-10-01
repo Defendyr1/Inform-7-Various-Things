@@ -7,4 +7,6 @@ Experimentation 1 is a way of learning the basics. It is also somewhat of an Inf
 
 Desert Survival is the second attempt at a game, with a survival and rpg aspect to it.
 
-The Nightmare of Reality is a third attempt, with a dream/reality mechanic.
+The Nightmare of Reality is a third attempt, with a dream/reality mechanic. (WIP)
+
+Combat System is another attempt at a working attack/defend mechanic. (WIP)
