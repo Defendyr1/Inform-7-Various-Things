@@ -108,3 +108,10 @@ Section -- Notes
 [Attempts to create an attack/defend system, must figure out duplicate items, do leveling up?]
 
 [finish reloading and attack commands. Finish debugging]
+[dodge chance?]
+
+RandomNum is a number that varies.
+RandomNum is initially 0.
+
+Every turn:
+    now RandomNum is a random number from 0 to 100.
