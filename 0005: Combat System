@@ -1,4 +1,4 @@
-"Combat Experiment" by Velocitas
+"Combat Experiment"
 
 Section -- Code
 
@@ -66,8 +66,17 @@ AttackingRedefined is an action applying to two things.
 Understand "attack [something] with [weapon]" as AttackingRedefined.
 
 Instead of AttackingRedefined:
-    say "bang!". [do some fancy math math see below]
-    
+    if something is a person begin;
+        now the HP of Attack Dummy is 1;
+    else;
+        say "bang!"; [do some fancy math math see below]
+    end if.
+
+inspecting is an action applying to nothing.
+understand "inspect" as inspecting.
+
+Instead of inspecting: say "[HP of Attack Dummy]".
+
 [attack is a total number => total damage = AmmoDamage + WeaponDamage
 defense is a percentage blocked => total damage = total damage - ((defense/100) * dmg)
 decrement ammo quantity
@@ -81,15 +90,14 @@ Understand "load [weapon]" as Reloading
 Instead of Reloading: 
     say "insert gun reload noise [lb]". 
     [finish reloading later?]
-    [a magazine is a kind of thing, it has a number called amount held, 
+    [a magazine is a kind of thing, it has a number called amount held]
 
 Section -- Fun Stuff
 
 Instead of jumping: say "Boing!".
 
 Section -- Notes
-[
-Attempts to create an attack/defend system
-must figure out duplicate items
-do leveling up?
-]
+
+[Attempts to create an attack/defend system, must figure out duplicate items, do leveling up?]
+
+[attempted redesigning attack command, fix command & finish test]
