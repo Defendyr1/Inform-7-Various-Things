@@ -2,6 +2,11 @@
 
 Section -- Code
 
+[ inform has a built in carry capactiy, called 'carrying capacity. 
+below says an item carries an infinite amt of things
+The backpack is a player's holdall.
+see Units (15.8 in book)
+]
 Arena is a room.
 The description of Arena is "A pure white, empty gladitorial arena.". 
 Attack Dummy is a man in Arena.
