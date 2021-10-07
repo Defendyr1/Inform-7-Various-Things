@@ -1,12 +1,21 @@
-"Combat Experiment 2"
+"Practical Mechanics"
+
+[learned about why repeats and rules are weird - tabs in here are four spaces, not a tab. That's why it errors.]
+
+[includes - attacking X with Y, weight, items w/ weight, inv limits,  Health, DEF,]
+[add leveling up]
+
+[need to index items in inv and check against carry weight]
 
 Section -- Code
 
-[ inform has a built in carry capactiy, called 'carrying capacity. 
-below says an item carries an infinite amt of things
-The backpack is a player's holdall.
-see Units (15.8 in book)
-]
+The can't exceed carrying capacity rule is not listed in any rulebook. [can hold infinite items]
+A thing has a number called heft. [not gonna call it weight or avoirdupois bc they're hard to spell]
+The heft of a thing is usually 1. [1 lbs]
+The heft of the player is 137. [avg weight of a person.]
+[no 115, new 210, med 240, expert 340, elite 440]
+[training, amt in lbs carry in deadweight]
+
 Arena is a room.
 The description of Arena is "A pure white, empty gladitorial arena.". 
 Attack Dummy is a man in Arena.
@@ -51,22 +60,19 @@ A weapon is a kind of thing.
 A weapon can be longR or shortR. [long reach or short reach]
 A weapon can be bluntF or sharpF. [blunt force or sharp force]
 A weapon can be singleH or doubleH. [singe hand or double hand]
-A weapon has a number called WeapWeight. [weight of weapon]
-The WeapWeight is usually 10. [measured in lbs]
 
 Training Knife is a weapon. 
 The printed name of Training Knife is "a knife".
-Training Knife is shortR, sharpF and singleH.
-The WeapWeight of Training Knife is 1.
+Training Knife is shortR, sharpF and singleH. [short range, sharp force, single hand]
 Training Knife is in Arena.
+The heft of Training Knife is 2.
 Understand "tk", "training", "train", "k", "knife", "train k" and "train knife" as Training Knife.
-
 
 AttackingRedefined is an action applying to two things.
 Understand "attack [something] with [weapon]" as AttackingRedefined.
 
 Instead of AttackingRedefined:
-    say "stabby".
+    say "stabby stabby stab stab".
     [fix this]
 
 Inspecting is an action applying to nothing.
