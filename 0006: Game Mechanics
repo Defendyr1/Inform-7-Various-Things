@@ -2,19 +2,18 @@
 
 [learned about why repeats and rules are weird - tabs in here are four spaces, not a tab. That's why it errors.]
 
-[includes - attacking X with Y, weight, items w/ weight, inv limits,  Health, DEF,]
+[includes - attacking X with Y, Health, DEF,]
 [add leveling up]
 
 [need to index items in inv and check against carry weight]
 
-Section -- Code
+[maybe?]
+The carrying capacity of the player is 10. 
+bag of holding is a thing.
+bag of holding is a player's holdall
+bag of holding is portable and openable.
 
-The can't exceed carrying capacity rule is not listed in any rulebook. [can hold infinite items]
-A thing has a number called heft. [not gonna call it weight or avoirdupois bc they're hard to spell]
-The heft of a thing is usually 1. [1 lbs]
-The heft of the player is 137. [avg weight of a person.]
-[no 115, new 210, med 240, expert 340, elite 440]
-[training, amt in lbs carry in deadweight]
+Section -- Code
 
 Arena is a room.
 The description of Arena is "A pure white, empty gladitorial arena.". 
