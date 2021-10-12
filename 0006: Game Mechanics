@@ -5,7 +5,18 @@
 [includes - attacking X with Y, Health, DEF,]
 [add leveling up]
 
-[need to index items in inv and check against carry weight]
+[need to index items in inv and check against carry weight
+or, I can use an interrupt ability whenever i pick up an item]
+
+PlayerCarryAmt is a number that varies.
+PlayerCarryAmt is 100.
+
+PlayerItems is a number that varies.
+PlayerItems is 0.
+
+[after taking that item, add weight to PlayerItems
+if playercarryamt is < player items, then drop that item (too  heavy)]
+
 
 [maybe?]
 The carrying capacity of the player is 10. 
