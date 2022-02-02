@@ -23,18 +23,33 @@ PC rules (player character)
 Strength, Dexterity, Stamina, Charisma, Intelligence, Perception
 Roll 3d6 for each ability
 Pick special abilities
-Name character]
-
-[Ideas
+Name character
 
 - Create a limited map of maybe 40 rooms max
 - Make rooms appear/disappear on certain conditions
 - Weapons, items, and armor can give buffs/debuffs
 - Chaos token idea? or use dice to determine results
 - Wandering enemies, 3 factions - ghosts, vampires, zombies 
-- Final bosses (The Headless Horseman, Dracula, ???)
-- second in command (Knights of Alleberg, Barlow, ???)
+- Final bosses (The Headless Horseman, Dracula, The Lich)
 - customizable character, transformation items? (no, probably too hard)
+
+Lich description
+A mage becomes a lich by means of necromancy, using a magical receptacle called a phylacter to store the lich's soul.
+The process is often described as requiring the creation and consumption of a deadly potion, the Elixir of Defilation. 
+The potion invariably kills the drinker but if the process is successful it rises again some days later as an undead Lich. 
+Occasionally, this metamorphosis occurs by accident as a result of life-prolonging magic.
+
+Unlike most other forms of undead creatures, the Lich retains all of the memories, personality, and abilities that it possessed in life 
+It has a virtual eternity to hone its skills and inevitably becomes very powerful. 
+It can summon other lesser undead to protect it. 
+A Lich's bones do not decay. 
+The Lich is capable of sustaining tremendous physical damage, and is immune to disease, poison, fatigue and other effects that affect only the living. 
+However, despite all its undead "gifts", a lich's most valuable resources are its intellect, its sorcery and limitless time.
+Since a lich's soul is mystically tied to its phylactery, destroying its body will not kill it. 
+Rather, its soul will return to the phylactery, and its body will be recreated by the power keeping it immortal. 
+Thus the only way to permanently destroy a lich is to destroy the phylactery as well. 
+Therefore, the lich will generally be extremely protective of the priceless item.
+The phylactery, which can be of virtually any form (the default form is a metal box filled with rune-covered papers, but it usually appears as a valuable amulet or gemstone), will often be hidden in a secret place and protected by powerful spells, charms, monsters and/or other servants; the phylactery itself is usually of magical nature, meaning its destruction will generally be no easier than obtaining it.
 
 Types of zombies
 Draugr    - strong, smelly, blue or pale, can curse (no increase in strength)
@@ -46,17 +61,32 @@ Romero    - dumb, need to consume flesh
 
 Romero(I) - See Romero, but make smart
 
-Types of ghosts (all weak to salt, iron,
+Types of ghosts (all weak to salt, iron)
 Poltergeist - pinch, bite, hit, noise, levitate objects
 
-Wraith - move through walls, ghost-touch (drain life), hate people
-       - weak to sun
+Phantom - move through walls, ghost-touch (drain life)
+        - weak to sun
 
-Revenant
+Possessor - animates nearby objects into a physical form
+          - cutting off limbs do work to harm
+          - resistance to salt/iron
 
 Types of vampires
-Type 1
-Type 2
-Type 3
+Type One vampires are the rarest and most powerful type of vampires. 
+    They are human-like in appearance but have two fangs and sometimes, their eyes glow. 
+    They possess great strength and speed, an incredibly long lifespan and the ability to hypnotize their victims with their eyes.
+    But they also have weaknesses: sunlight burns their skin, they cannot enter a house and drink the owner's blood unless they are invited in first. 
+    They are repelled by religious symbols, however, the effectiveness of the symbols depends on the faith of the bearer.
+    Prolonged contact with a religious item as well as a stake driven trough the heart will destroy the vampire. 
+    When they die, their bodies crumble into a black goo, leaving behind only their fangs. 
+    They are able to create Type Two vampires by draining a human of their blood in addition to the bites themselves making a person unclean. 
+    If a human drinks the blood of a Type One, they will be able to detect vampires, but become damned, unable to enter churches, being harmed by a holy force like a vampire
+Type Two vampires possess great strength and speed but aren't nearly as intelligent as Type Ones and are burned by the sun. 
+    They have an extreme hunger and live very short lives. 
+    They create other Type Twos by draining humans and can also create Type Threes with a bite.
+Type Three vampires are human in appearance, can go out in the sunlight and they get most of their sustenance from regular food. 
+    They do drink blood, but they cannot create other vampires. 
+    The Type Three bite puts the victims into a trance like state and also has memory-erasing properties. 
+    When they die, their bodies turn to dust.
 
 ]
