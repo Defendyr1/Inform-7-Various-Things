@@ -1,15 +1,58 @@
-"Untitled".
-The story headline is "A work in progress by Lambert Owens.".
+"Reanimation" by neophyte.
+The story headline is "A necromantic nightmare".
 
 Include Basic Screen Effects by Emily Short. 
-[clear the screen.]
+Use verbose room descriptions.
 
-[Test me with "jump / look / z"]
-[to use the test, type "test me]
+Test me with "jump / look / z"
+[Order of Code:
+   -S 1   - Before Gameplay
+    S 1.1 - Player Character Setup
+    S 1.2 - Other Setup
+   -S 2   - Objects
+    S 2.1 - Weapons
+    S 2.2 - Armor
+    S 2.3 - Other Items
+   -S 3   - Entities
+    S 3.1 - Ghosts
+    S 3.2 - Vampires
+    S 3.3 - Zombies
+   -S 4   - Rooms]
 
-Laboratory is a room.
+Section 1 - Before Gameplay----------------------------------------------------------------
+
+Section 1.1 - Player Character Setup-------------------------------------------------------
+
+A person has a number called HP.
+A person has a number called MaxHP.
+A person has a number called defense.
+A person has a number called faith.
+A person has a number called strength.
+A person has a number called dexterity.
+A person has a number called stamina.
+A person has a number called charisma.
+A person has a number called intelligence.
+A person has a number called perception.
+
+A person can be a human, a vampire, a ghost or a zombie.
+
+When play begins:
+    now the player is a human;
+    now the strength of the player is 3 * a random number from 1 to 6;
+    now the dexterity of the player is 3 * a random number from 1 to 6;
+    now the stamina of the player is 3 * a random number from 1 to 6;
+    now the charisma of the player is 3 * a random number from 1 to 6;
+    now the intelligence of the player is 3 * a random number from 1 to 6;
+    now the perception of the player is 3 * a random number from 1 to 6;
+    now the MaxHP of the player is 10;
+    now the HP of the player is 10;
+    say "[MaxHP of the player].".
 
 
+Section X - To Be Sorted-------------------------------------------------------------------
+
+Cemetery is a room.
+Nonexistence is a room.
 [D&D Rules
 See "https://www.americanroads.us/DandD/DnD_Basic_Rules_Moldvay.pdf" for details
 
@@ -48,8 +91,8 @@ However, despite all its undead "gifts", a lich's most valuable resources are it
 Since a lich's soul is mystically tied to its phylactery, destroying its body will not kill it. 
 Rather, its soul will return to the phylactery, and its body will be recreated by the power keeping it immortal. 
 Thus the only way to permanently destroy a lich is to destroy the phylactery as well. 
-Therefore, the lich will generally be extremely protective of the priceless item.
-The phylactery, which can be of virtually any form (the default form is a metal box filled with rune-covered papers, but it usually appears as a valuable amulet or gemstone), will often be hidden in a secret place and protected by powerful spells, charms, monsters and/or other servants; the phylactery itself is usually of magical nature, meaning its destruction will generally be no easier than obtaining it.
+The phylactery will often be hidden in a secret place and protected by powerful spells, charms, monsters and/or other servants
+The phylactery itself is usually of magical nature, meaning its destruction will generally be no easier than obtaining it.
 
 Types of zombies
 Draugr    - strong, smelly, blue or pale, can curse (no increase in strength)
@@ -59,7 +102,7 @@ Romero    - dumb, need to consume flesh
           - their actions imitate actions in life (eating, going to specific places)
           - weak to fire, headshots
 
-Romero(I) - See Romero, but make smart
+Romero(I) - See Romero, but make smart and intelligent
 
 Types of ghosts (all weak to salt, iron)
 Poltergeist - pinch, bite, hit, noise, levitate objects
