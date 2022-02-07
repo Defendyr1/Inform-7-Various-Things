@@ -5,23 +5,21 @@ Include Basic Screen Effects by Emily Short.
 Use verbose room descriptions.
 
 Test me with "jump / look / z"
-[Order of Code:
-   -S 1   - Before Gameplay
-    S 1.1 - Player Character Setup
-    S 1.2 - Other Setup
-   -S 2   - Objects
-    S 2.1 - Weapons
-    S 2.2 - Armor
-    S 2.3 - Other Items
-   -S 3   - Entities
-    S 3.1 - Ghosts
-    S 3.2 - Vampires
-    S 3.3 - Zombies
-   -S 4   - Rooms]
+[tab character: "	"]
 
-Section 1 - Before Gameplay----------------------------------------------------------------
+Section - Before Gameplay Stuff------------------------------------------------------------
 
-Section 1.1 - Player Character Setup-------------------------------------------------------
+To say tab:
+	say "        ".
+
+Helping is an action applying to nothing.
+Understand "help" as helping.
+Report helping:
+	say "Help section in progress, sorry.".
+
+Section - Player Character-----------------------------------------------------------------
+
+The description of the player is "You don't have a mirror, but you're a [if the player is male]handsome devil[end if][if the player is female]beautiful lady[end if] nonetheless.".
 
 A person has a number called HP.
 A person has a number called MaxHP.
@@ -34,25 +32,45 @@ A person has a number called charisma.
 A person has a number called intelligence.
 A person has a number called perception.
 
-A person can be a human, a vampire, a ghost or a zombie.
-
 When play begins:
-    now the player is a human;
-    now the strength of the player is 3 * a random number from 1 to 6;
-    now the dexterity of the player is 3 * a random number from 1 to 6;
-    now the stamina of the player is 3 * a random number from 1 to 6;
-    now the charisma of the player is 3 * a random number from 1 to 6;
-    now the intelligence of the player is 3 * a random number from 1 to 6;
-    now the perception of the player is 3 * a random number from 1 to 6;
-    now the MaxHP of the player is 10;
-    now the HP of the player is 10;
-    say "[MaxHP of the player].".
+	say "Starting the game...";
+	now the strength of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6); 
+	now the dexterity of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the stamina of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the charisma of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the intelligence of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the MaxHP of the player is 10;
+	now the HP of the player is 10;
+	now the defense of the player is 0;
+	now the faith of the player is a random number from 0 to 100;
+	say "Would you like to be male (Y) or female (N)?";
+	if the player consents:
+		now the player is male;
+		say "Welcome sir, to your personal hell.";
+	otherwise:
+		now the player is female;
+		say "Welcome ma'am, to your personal hell.";
+	clear the screen; 
+	say "[paragraph break][tab]You received a letter from a long lost relative's house in the mail one day. This wasn't interesting in the slightest, but after another week the letter was back in the mail. This, now, didn't make any sense, for you had thrown away the letter with all the other junk that various magazines send you for no reason. You reread the letter, making sure it wasn't anything super important. Other than a rather polite greeting, it had nothing of interest, except the return of itself. This time, there was a return address on the envelope. Seems like the sender was clumsy in hiding their tracks.";
+	wait for any key;
+	say "[line break][tab]You decide to go to the address there, after receiving a third letter. It concealed a vague threat this time, written inside the envelope. Fortunately, the address was reasonably nearby. A short drive later, you arrive at a small village surrounding a dark gray castle. The sign proclaims it 'Sepulchre'. That doesn't bode well, and a tingle of fear runs down your spine. It appears the address is the castle itself. Perhaps this wasn't the best idea. You second-guess yourself again, and then your car breaks down.";
+	wait for any key.
 
+Section - Rooms ---------------------------------------------------------------------------
+
+Southern Path is a room.
+The description of Southern Path is "The disused road leads north to the mountain. Dark green conifers line the road, casting long shadows over the forgotten path. Going south would serve no purpose, and north is really the only way left.".
+
+Check going south when the player is in Southern Path:
+	say "You turn tail and run. And you ran away.";
+	end the story saying "You just couldn't.".
+
+Nonexistence is a room. 
+The description of Nonexistence is "You don't exist! You shouldn't even be here.".
 
 Section X - To Be Sorted-------------------------------------------------------------------
 
-Cemetery is a room.
-Nonexistence is a room.
 [D&D Rules
 See "https://www.americanroads.us/DandD/DnD_Basic_Rules_Moldvay.pdf" for details
 
@@ -74,7 +92,6 @@ Name character
 - Chaos token idea? or use dice to determine results
 - Wandering enemies, 3 factions - ghosts, vampires, zombies 
 - Final bosses (The Headless Horseman, Dracula, The Lich)
-- customizable character, transformation items? (no, probably too hard)
 
 Lich description
 A mage becomes a lich by means of necromancy, using a magical receptacle called a phylacter to store the lich's soul.
