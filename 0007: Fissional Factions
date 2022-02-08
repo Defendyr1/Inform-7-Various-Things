@@ -59,6 +59,7 @@ When play begins:
 	now the HP of the player is 10;
 	now the defense of the player is 0;
 	now the radiation of the player is 0;
+	now the player is in Homemade Bunker;
 	say "Would you like to be male (Y) or female (N)?";
 	if the player consents:
 		now the player is male;
@@ -74,6 +75,14 @@ Section - Rooms ----------------------------------------------------------------
 
 Homemade Bunker is a room.
 The description of Homemade Bunker is "A rather coarse, homemade bunker. Various necessities line the walls - bed, water purifier, and the like. Going up leads to the ruins of the house. South leads to a garden, and west to a room filled with old technology.".
+
+Control Room is a room.
+Control Room is west of Homemade Bunker.
+The description of Control Room is "A shabby concrete and iron structure. Around the old technology lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
+
+Garden Center is a room.
+Garden Center is south of Homemade Bunker.
+The description of Garden Center is "Rows of plants grow under flourescent lights, presumably powered from the control room. The watering system is all automatic, and there seems to be plenty of variety for food. The rest of the bunker lies to the north.".
 
 Nonexistence is a room. 
 The description of Nonexistence is "You don't exist! You shouldn't even be here.".
