@@ -14,7 +14,7 @@ To say tab:
 
 Report taking something:
 	say "Taken. [run paragraph on]";
-	try examining the noun.
+	try examining the noun instead.
 	
 A thing has some text called the reading-material.
 The reading-material of a thing is usually "".
@@ -30,7 +30,6 @@ Check reading:
 Carry out reading:
 	say "[reading-material of the noun]".
 	
-
 Helping is an action applying to nothing.
 Understand "help" as helping.
 Report helping:
@@ -179,12 +178,25 @@ The description of rug is "It's really ugly. It's so nasty, nobody wants to move
 
 Section - Items----------------------------------------------------------------------------
 
+The backpack is a thing.
 The backpack is an open container in Homemade Bunker.
 The backpack is wearable.
 The backpack is a player's holdall.
 The description of the backpack is "A rather nice military style backpack. It never seems to be too heavy, or full.".
 
-[flashlight, turn on/off, infinite light??]
+An electric light is a kind of device. 
+Carry out switching on an electric light: 
+	now the noun is lit.
+ 
+Carry out switching off an electric light: 
+	now the noun is unlit.
+
+The examine devices rule is not listed in the carry out examining rules.
+
+The flashlight is a thing.
+The flashlight is in Homemade Bunker.
+The flashlight is an electric light.
+The description of flashlight is "A long black metal flashlight. Bright and rather durable. [if the flashlight is lit]It is currently on.[otherwise]It is currently off.".
 
 Section - Unexcusable Cheats---------------------------------------------------------------
 
