@@ -93,11 +93,15 @@ Understand the command "sleep" as something new.
 SleepingN is an action applying to nothing.
 Understand "sleep" and "sleep in bed" as sleepingN.
 Report sleepingN:
-	say "You decide to take a quick nap. zzz.";
-	now the HP of the player is the MaxHP of the player.
+	if the player is in Homemade Bunker:
+		say "You decide to take a quick nap. zzz.";
+		now the HP of the player is the MaxHP of the player;
+	otherwise:
+		say "Shouldn't you have a bed first?".
 	
 water purifier is scenery in Homemade Bunker.
-The description of water purifier is "It's a strange, horizontal tube lying upon three vertical tubes. Somehow, it creates clean water for you to drink. All you have to do is [bold type]get water[roman type].".
+Understand "purifier" and "w purifier" and "water p" as the water purifier.
+The description of water purifier is "It's a strange, horizontal tube lying upon three vertical tubes. Somehow, it creates clean water for you to drink. All you have to do is [bold type]get water[roman type], although, it does run out.".
 
 Getting water is an action applying to nothing.
 Understand "get water" as getting water.
@@ -108,13 +112,49 @@ Control Room is a room.
 Control Room is west of Homemade Bunker.
 The description of Control Room is "A shabby concrete and iron structure. Around the old technology lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
 
+Faraday cage is scenery in Control Room. 
+Understand "cage" and "faraday" and "f cage" as the faraday cage.
+The description of the faraday cage is "It looks like chicken coop wire strung about all the electronics. It'll protect against EMPs, so you shouldn't mess with it.".
+
+nuclearBattery is scenery in Control Room.
+Understand "RTG" and "nuclear battery" as nuclearBattery.
+The description of nuclearBattery is "A dangerous battery which gets energy from decaying radioactive materials. It also emits a fair amount of heat. You should definitely not mess with it, unless you like cancer.".
+
+Control Panels is scenery in Control Room.
+understand "old tech" and "old technology" and "control p" and "panels" as control panels.
+The description of control panels is "A cobbled together piece of computer equipment. It seems that it controls defenses. Apparenetly the lights, garden center and water purification are all automated already. To use the panel, type [bold type]activate control panels[roman type].".
+
+defensesActivated is a truth state that varies.
+defensesActivated is initially false.
+
+Activating is an action applying to nothing.
+Understand "activate control panels" or "acp" as activating.
+Report activating:
+	if the player is in Control Room:
+		if defensesActivated is false:
+			now defensesActivated is true;
+			say "Activating defenses.";
+		otherwise:
+			now defensesActivated is false;
+			say "Deactivating defenses.";
+	otherwise:
+		say "You should probably be in the bunker then.".
+
 Garden Center is a room.
 Garden Center is south of Homemade Bunker.
-The description of Garden Center is "Rows of plants grow under flourescent lights, presumably powered from the control room. The watering system is all automatic, and there seems to be plenty of variety for food. The rest of the bunker lies to the north.".
+The description of Garden Center is "Rows of plants grow under flourescent lights, presumably powered from the control room. The watering system is all automatic, and there seems to be plenty of variety for food. You can [bold type]get food[roman type], although it is not infinite. The rest of the bunker lies to the north.".
+
+Getting food is an action applying to nothing.
+Understand "get food" as getting food.
+Report getting food:
+	say "WIP. Will be able to receive item eventually.".
 
 Wrecked Bedroom is a room.
 Wrecked Bedroom is above Homemade Bunker.
 The description of Wrecked Bedroom is "A master bedroom, reasonably furnished. A trapdoor under a rug leads down to the bunker. To the east leads the rest of the house.".
+
+rug is scenery in Wrecked Bedroom.
+The description of rug is "It's really ugly. It's so nasty, nobody wants to move it, so your bunker is hidden.".
 
 Section - Unexcusable Cheats---------------------------------------------------------------
 
@@ -132,7 +172,17 @@ Report shufflingStats:
 	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
 	say "Cheater! - stats reshuffled.".
 
-
+upgrading is an action applying to nothing.
+understand "upgrade me" as upgrading.
+Report upgrading:
+	now the strength of the player is the strength of the player + 1;
+	now the dexterity of the player is the dexterity of the player + 1;
+	now the stamina of the player is the stamina of the player + 1;
+	now the charisma of the player is the charisma of the player + 1;
+	now the intelligence of the player is the intelligence of the player + 1;
+	now the perception of the player is the perception of the player + 1;
+	say "Cheater! - stats upgraded.".
+	
 Section - Notes ---------------------------------------------------------------------------
 
 [D&D Rules
