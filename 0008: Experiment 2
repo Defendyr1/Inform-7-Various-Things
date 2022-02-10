@@ -3,11 +3,27 @@
 Laboratory is a room.
 The description of Laboratory is "A room filled with junk for some endless tests.".
 
+money is a kind of thing.
+The description of money is "some money".
+3 moneys are in laboratory.
+
+[It seems like I have to make a kind of thing, and then say where it is. I can have quantities of the object then, but taking/dropping it looks dumb and bad.]
+
+[
 A thing has a number called quantity.
 The quantity of a thing is usually 1.
 
 Carry out dropping a thing:
-  if the quantity of the thing is 1:
-    continue the action;
-  otherwise:
-    quantity of the thing is -1.
+	now the quantity of the noun is quantity of the noun - 1;
+	if the quantity of the noun is 0:
+		now the noun is in Laboratory.
+
+Carry out taking a thing:
+	now the quantity of the noun is quantity of the noun + 1.
+
+libro is a kind of thing.
+
+The description of a libro is "A vague item. [quantity of the noun]".
+
+2 libro are in laboratory.
+]
