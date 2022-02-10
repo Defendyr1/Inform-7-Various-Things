@@ -7,14 +7,14 @@ Use verbose room descriptions.
 Test me with "jump / look / z"
 [tab character: "	"]
 
-Section - Before Gameplay Stuff------------------------------------------------------------
+Section - Various Gameplay Rules-----------------------------------------------------------
 
 To say tab:
 	say "        ".
 
 Rule for printing room description details of a closed container: 
 	stop.
-	
+
 Rule for printing the name of a closed container (called C) while taking inventory:
 	say "[printed name of C]";
 	omit contents in listing.
@@ -37,6 +37,15 @@ Check reading:
 Carry out reading:
 	say "[reading-material of the noun]".
 	
+An electric light is a kind of device. 
+Carry out switching on an electric light: 
+	now the noun is lit.
+ 
+Carry out switching off an electric light: 
+	now the noun is unlit.
+
+The examine devices rule is not listed in the carry out examining rules.
+
 Helping is an action applying to nothing.
 Understand "help" as helping.
 Report helping:
@@ -68,11 +77,12 @@ A person has a number called charisma.
 A person has a number called intelligence.
 A person has a number called perception.
 A person has a number called money.
+A person has some text called name.
 
 Table of Status Bar
 left	central	right 
-"HP: [HP of the player]/[MaxHP of the player] | DEF: [defense of the player] | RAD: [radiation of the player]"	""	"[location of the player]"
-"STR: [strength of the player] | DEX: [dexterity of the player] | STA: [stamina of the player] | CHA: [charisma of the player] | INT: [intelligence of the player] | PER: [perception of the player]"	""	"Money: [money of the player]"
+"Name: [name of the player] | HP: [HP of the player]/[MaxHP of the player] | DEF: [defense of the player] | RAD: [radiation of the player]"	""	"[map region of the location]"
+"STR: [strength of the player] | DEX: [dexterity of the player] | STA: [stamina of the player] | CHA: [charisma of the player] | INT: [intelligence of the player] | PER: [perception of the player]"	""	"[location of the player]"
 
 Rule for constructing the status line:
 	fill status bar with Table of Status Bar;
@@ -94,8 +104,28 @@ When play begins:
 	say "Would you like to be male (Y) or female (N)?";
 	if the player consents:
 		now the player is male;
+		let x be a random number from 1 to 4;
+		if x is 1:
+			now the name of the player is "Alex";
+		if x is 2:
+			now the name of the player is "Aaron";
+		if x is 3:
+			now the name of the player is "Max";
+		if x is 4:
+			now the name of the player is "John";
 	otherwise:
 		now the player is female;
+		let x be a random number from 1 to 4;
+		if x is 1:
+			now the name of the player is "Alexis";
+		if x is 2:
+			now the name of the player is "Erin";
+		if x is 3:
+			now the name of the player is "Max";
+		if x is 4:
+			now the name of the player is "Jane";
+	say "Your name is [name of the player]. If you didn't like your name, too bad. Push a key to continue";
+	wait for any key;
 	clear the screen; 
 	say "[paragraph break][tab]You weren't a newspaper type of person, but when the first bomb exploded in New York, you made sure to read them. A terrorist had rigged some type of bomb. The UN responded with embargoes, threats, outright war. And the enemy sent more. More nukes. The UN had no other choice. No choice other than the Cold War era idea of Mutually Assured Destruction. They were MAD, so the bombs continued. After the first day, a cruel sense of revenge. After the second, doubt. Doubt that they had made the right decision After the third, nothing remained. Nothing but a ruined world, rampant extinction and fear. ";
 	wait for any key;
@@ -186,24 +216,29 @@ The description of rug is "It's really ugly. It's so nasty, nobody wants to move
 Section - Items----------------------------------------------------------------------------
 
 The backpack is a thing.
-The backpack is an open container in Homemade Bunker.
+The backpack is an closed container in Homemade Bunker.
 The backpack is wearable.
 The backpack is a player's holdall.
+Understand "backp" and "bpack" and "bp" as the backpack.
 The description of the backpack is "A rather nice military style backpack. It never seems to be too heavy, or full.".
 
-An electric light is a kind of device. 
-Carry out switching on an electric light: 
-	now the noun is lit.
- 
-Carry out switching off an electric light: 
-	now the noun is unlit.
-
-The examine devices rule is not listed in the carry out examining rules.
-
 The flashlight is a thing.
-The flashlight is in Homemade Bunker.
+The flashlight is in the backpack.
 The flashlight is an electric light.
+Understand "flash" and "light" as the flashlight.
 The description of flashlight is "A long black metal flashlight. Bright and rather durable. [if the flashlight is lit]It is currently on.[otherwise]It is currently off.".
+
+Toxic water is a kind of thing.
+The description of toxic water is "Water. Too poisonous to drink. Maybe some you can [bold type]purify[roman type] it with a water purifier?".
+[(quantity) toxic water is in (location)]
+
+Dirty water is a kind of thing.
+The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]boil[roman type] will help.".
+[(quantity) dirty water is in (location)]
+
+Clean water is a kind of thing.
+The description of clean water is "Clean water. Good to drink.".
+[(quantity) clean water is in (location)]
 
 Section - Unexcusable Cheats---------------------------------------------------------------
 
