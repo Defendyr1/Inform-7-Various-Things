@@ -12,28 +12,43 @@ Section - Before Gameplay Stuff-------------------------------------------------
 To say tab:
 	say "        ".
 
-A thing can be examined or unexamined.
-A thing is usually unexamined.
-
-Report taking something unexamined:
+Report taking something:
 	say "Taken. [run paragraph on]";
 	try examining the noun.
+	
+A thing has some text called the reading-material.
+The reading-material of a thing is usually "".
 
-Carry out examining something:
-	now the noun is examined.
+Understand the command "read" as something new.
+Reading is an action applying to one thing and requiring light.
+Understand "read [something]" as reading.
+
+Check reading:
+	if the reading-material of the noun is "":
+		try examining the noun instead.
+		
+Carry out reading:
+	say "[reading-material of the noun]".
+	
 
 Helping is an action applying to nothing.
 Understand "help" as helping.
 Report helping:
-	say "Say help <number> for more information. [line break]1: Stat descriptions. [line break]".
+	say "Say help <number> for more information. [line break]1: Stat descriptions. [line break]2: Cheating".
 
 HelpingOne is an action applying to nothing.
 Understand "help 1" and "help one" as HelpingOne.
 Report HelpingOne:
 	say "HP is your current health points. [line break]MaxHP is the maximum health you may get. [line break]Defense is how much defense you have. It also defends against radiation. [line break]Radiation is how much radiation has accumulated in your system. A high number is dangerous.[line break]Strength is a measure of physical force, how much brute force you have.[line break]Dexterity is a measure of skill, how well one can use their hands. [line break]Stamina is a measure of endurance, of toughness. More endurance affects HP and Strength. [line break]Charisma is how likable you are. May affect NPC conversations. [line break]Intelligence is how smart you are, whether you know something or not. [line break]Perception is how effectively you can use that intelligence. It is acts as inspiration or noticing other things.".
 
+HelpingTwo is an action applying to nothing.
+Understand "help 2" and "help two" as HelpingTwo.
+Report HelpingTwo:
+	say "Available cheats: [line break]shuffle stats -> shuffle beginning stats, all stats are between 3 and 18.[line break]upgrade me -> +1 to the 6 stats.".
+
 Section - Player Character-----------------------------------------------------------------
 
+The carrying capacity of the player is 5.
 The description of the player is "You don't have a mirror, but you're a [if the player is male]handsome devil[end if][if the player is female]beautiful lady[end if] nonetheless.".
 
 A person has a number called HP.
@@ -50,7 +65,7 @@ A person has a number called money.
 
 Table of Status Bar
 left	central	right 
-"HP: [HP of the player]/[MaxHP of the player] | DEF: [defense of the player] | RAD: [radiation of the player]"	""	""
+"HP: [HP of the player]/[MaxHP of the player] | DEF: [defense of the player] | RAD: [radiation of the player]"	""	"[location of the player]"
 "STR: [strength of the player] | DEX: [dexterity of the player] | STA: [stamina of the player] | CHA: [charisma of the player] | INT: [intelligence of the player] | PER: [perception of the player]"	""	"Money: [money of the player]"
 
 Rule for constructing the status line:
@@ -106,7 +121,10 @@ The description of water purifier is "It's a strange, horizontal tube lying upon
 Getting water is an action applying to nothing.
 Understand "get water" as getting water.
 Report getting water:
-	say "WIP. Will be able to receive item eventually.".
+	if the player is in Homemade Bunker:
+		say "WIP. Will be able to receive item eventually.";
+	otherwise:
+		say "You should probably find a purifier first.".
 
 Control Room is a room.
 Control Room is west of Homemade Bunker.
@@ -147,7 +165,10 @@ The description of Garden Center is "Rows of plants grow under flourescent light
 Getting food is an action applying to nothing.
 Understand "get food" as getting food.
 Report getting food:
-	say "WIP. Will be able to receive item eventually.".
+	if the player is in Garden Center:
+		say "WIP. Will be able to receive item eventually.";
+	otherwise:
+		say "Shouldn't you find a food source first?".
 
 Wrecked Bedroom is a room.
 Wrecked Bedroom is above Homemade Bunker.
@@ -156,10 +177,22 @@ The description of Wrecked Bedroom is "A master bedroom, reasonably furnished. A
 rug is scenery in Wrecked Bedroom.
 The description of rug is "It's really ugly. It's so nasty, nobody wants to move it, so your bunker is hidden.".
 
+Section - Items----------------------------------------------------------------------------
+
+The backpack is an open container in Homemade Bunker.
+The backpack is wearable.
+The backpack is a player's holdall.
+The description of the backpack is "A rather nice military style backpack. It never seems to be too heavy, or full.".
+
+[flashlight, turn on/off, infinite light??]
+
 Section - Unexcusable Cheats---------------------------------------------------------------
 
 Nonexistence is a room. 
-The description of Nonexistence is "You don't exist! You shouldn't even be here.".
+The description of Nonexistence is "You don't exist! You shouldn't even be here. That aside, items will be here, and NPCs as well.".
+
+cheater is a truth state that varies.
+cheater is initially false.
 
 shufflingStats is an action applying to nothing.
 Understand "shuffle stats" as shufflingStats.
@@ -170,6 +203,7 @@ Report shufflingStats:
 	now the charisma of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
 	now the intelligence of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
 	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now cheater is true;
 	say "Cheater! - stats reshuffled.".
 
 upgrading is an action applying to nothing.
@@ -181,6 +215,7 @@ Report upgrading:
 	now the charisma of the player is the charisma of the player + 1;
 	now the intelligence of the player is the intelligence of the player + 1;
 	now the perception of the player is the perception of the player + 1;
+	now cheater is true;
 	say "Cheater! - stats upgraded.".
 	
 Section - Notes ---------------------------------------------------------------------------
