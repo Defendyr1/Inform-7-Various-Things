@@ -12,6 +12,13 @@ Section - Before Gameplay Stuff-------------------------------------------------
 To say tab:
 	say "        ".
 
+Rule for printing room description details of a closed container: 
+	stop.
+	
+Rule for printing the name of a closed container (called C) while taking inventory:
+	say "[printed name of C]";
+	omit contents in listing.
+
 Report taking something:
 	say "Taken. [run paragraph on]";
 	try examining the noun instead.
