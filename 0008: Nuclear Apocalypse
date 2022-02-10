@@ -8,17 +8,17 @@ Test me with "jump / look / z"
 [tab character: "	"]
 
 [Table of Contents
-    Priorities Notes				Need to do stuff
-    Gameplay Rules				Rules for so and so
-    The when play begins rule			When play begins ...
-    Player Character				Player Character informatio
-    Rooms and Scenery				Each room / scenery
-    Actions					New Actions
-    Items					In-game items
-    Unexcusable Cheats				Unfair cheat commands
-    Tables of Reference Information		tables for accessing information
-    Notes					comments on possible additions
-    Work Area					dump code, refine, then sort]
+	Priorities Notes			    	Need to do stuff
+	Gameplay Rules			        	Rules for so and so
+	The when play begins rule	    	When play begins ...
+	Player Character			    	Player Character informatio
+	Rooms and Scenery			    	Each room / scenery
+	Actions					            New Actions
+	Items				            	In-game items
+	Unexcusable Cheats	    			Unfair cheat commands
+	Tables of Reference Information	    tables for accessing information
+	Notes				        	    comments on possible additions
+	Work Area					        dump code, refine, then sort]
 
 Section - Priority Notes -----------------------------------------------------------------
 
@@ -92,17 +92,25 @@ When play begins:
 	if the player consents:
 		now the player is male;
 		let x be a random number from 1 to 4;
-		if x is 1: now the name of the player is "Alex";
-		if x is 2: now the name of the player is "Aaron";
-		if x is 3: now the name of the player is "Max";
-		if x is 4: now the name of the player is "John";
+		if x is 1: 
+			now the name of the player is "Alex";
+		if x is 2: 
+			now the name of the player is "Aaron";
+		if x is 3: 
+			now the name of the player is "Max";
+		if x is 4: 
+			now the name of the player is "John";
 	otherwise:
 		now the player is female;
 		let x be a random number from 1 to 4;
-		if x is 1: now the name of the player is "Alexis";
-		if x is 2: now the name of the player is "Erin";
-		if x is 3: now the name of the player is "Max";
-		if x is 4: now the name of the player is "Jane";
+		if x is 1: 
+			now the name of the player is "Alexis";
+		if x is 2: 
+			now the name of the player is "Erin";
+		if x is 3: 
+			now the name of the player is "Max";
+		if x is 4: 
+			now the name of the player is "Jane";
 	say "Your name is [name of the player]. If you didn't like your name, too bad. Push a key to continue.";
 	wait for any key;
 	clear the screen; 
@@ -132,7 +140,7 @@ A person has some text called name.
 Section - Rooms and Scenery ---------------------------------------------------------------
 
 Homemade Bunker is a room.
-The description of Homemade Bunker is "A rather coarse, homemade bunker. Various necessities line the walls - bed, water purifier, storage unit and the like. Going up leads to the ruins of the house. South leads to a garden, and west to a room filled with old technology.".
+The description of Homemade Bunker is "A rather coarse, homemade bunker. Various necessities line the walls - [bold type]bed, water purifier, storage unit [roman type]and the like. Going up leads to the ruins of the house. South leads to a garden, and west to a room filled with old technology.".
 
 Bed is scenery in Homemade Bunker.
 The description of Bed is "A ridiculously soft, comfy bed. Makes you wish you had slept through the apocalypse, or forever.".
@@ -141,16 +149,15 @@ water purifier is scenery in Homemade Bunker.
 Understand "purifier" and "w purifier" and "water p" as the water purifier.
 The description of water purifier is "It's a strange, horizontal tube lying upon three vertical tubes. Somehow, it creates clean water for you to drink. All you have to do is [bold type]get water[roman type], although, it does run out.".
 
-storage is scenery in Homemade Bunker.
-storage is fixed in place. [may need to remove]
-storage is a closed container.
-storage is a player's holdall.
-Understand "storage unit" and "unit" as storage. 
-The description of storage is "A storage unit. Contains a lot of things, and is rather nice to have.".
+storage unit is scenery in Homemade Bunker.
+storage unit is a closed container.
+storage unit is a player's holdall.
+Understand "storage" and "storage unit" and "unit" as storage unit. 
+The description of storage unit is "A storage unit. Contains a lot of things, and is rather nice to have.".
 
 Control Room is a room.
 Control Room is west of Homemade Bunker.
-The description of Control Room is "A shabby concrete and iron structure. Around the old technology lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
+The description of Control Room is "A shabby concrete and iron structure. Around the [bold type]old technology[roman type] lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
 
 Faraday cage is scenery in Control Room. 
 Understand "cage" and "faraday" and "f cage" as the faraday cage.
@@ -258,35 +265,35 @@ The flashlight is an electric light.
 Understand "flash" and "light" as the flashlight.
 The description of flashlight is "A long black metal flashlight. Bright and rather durable. [if the flashlight is lit]It is currently on.[otherwise]It is currently off.".
 
-Toxic water is a kind of thing.
+toxic water is a kind of thing.
 The indefinite article of toxic water is "some".
 The description of toxic water is "Water. Too poisonous to drink. Maybe some you can [bold type]purify[roman type] it with a water purifier?".
 [(quantity) toxic water is in (location)]
 
-Dirty water is a kind of thing.
+dirty water is a kind of thing.
 The indefinite article of dirty water is "some".
 The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]boil[roman type] will help.".
 [(quantity) dirty water is in (location)]
 
-Clean water is a kind of thing.
+clean water is a kind of thing.
 The indefinite article of clean water is "some".
 The description of clean water is "Clean water. Good to drink.".
-3 clean water is in storage.
+3 clean water is in storage unit.
 
-Foraged food is a kind of thing.
+foraged food is a kind of thing.
 The indefinite article of foraged food is "some".
 The description of foraged food is "An assorted sundry collection of herbs, leaves, fruits and berries.".
 [(quantity) foraged food is in (location)]
 
-Raw meat is a kind of thing.
+raw meat is a kind of thing.
 The indefinite article of raw meat is "some".
 The description of raw meat is "Some raw meat. Would not be safe to eat. Try [bold type]cook[roman type]ing the meat.".
 [(quantity) raw meat is in (location)]
 
-Cooked meat is a kind of thing.
+cooked meat is a kind of thing.
 The indefinite article of cooked meat is "some".
 The description of cooked meat is "Some cooked meat. Could be steak, pork chops, chicken, rabbit, venison, etc.".
-3 cooked meat is in storage.
+3 cooked meat is in storage unit.
 
 Section - Unexcusable Cheats---------------------------------------------------------------
 
@@ -352,17 +359,45 @@ Name character
 
 Section - Work Area -----------------------------------------------------------------------
 
-Understand the commands "attack", "kill", "destroy", "break", "murder", "smash" as something new.
-Understand the commands "crack", "punch", "fight", "thump", "hit", "torture", "wreck" as something new.
+[finish combat damage section, and unequipping weapons]
+
+Understand the commands "crack", "hit", "kill", "fight" as something new.
+Understand the commands "attack", "punch", "destroy" as something new.
+Understand the commands "thump", "torture", "wreck" as something new.
+Understand the commands "break", "murder", "smash" as something new.
+
+amountEquipped is a number that varies.
+amountEquipped is initially 0.
 
 A weapon is a kind of thing.
-A weapon can be singleH or doubleH. [singe hand or double hand]
+A weapon can be singleHand or doubleHand. [singe hand or double hand]
+A weapon can be equipped or unequipped.
 A weapon can be ranged or melee.
 
-[need to equip weapon for combat!]
+equipping is an action applying to one thing.
+Understand "equip [something]" as equipping.
+Report equipping:
+	if amountEquipped is 0:
+		if the noun is singleHand:
+			now amountEquipped is amountEquipped + 1;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+		if the noun is doubleHand:
+			now amountEquipped is amountEquipped + 2;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+	else if amountEquipped is 1:
+		if the noun is singleHand:
+			now amountEquipped is amountEquipped + 1;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+		if the noun is doubleHand:
+			say "That would require a third hand.";
+	else if amountEquipped is 2:
+		say "You only have two hands!".
 
 RedefinedAttacking is an action applying to two things.
 Understand "attack [something] with [weapon]" as RedefinedAttacking.
 
 Report RedefinedAttacking:
-	say "stabby stabby stab stab".
+	say "stabby stabby stab stab (WIP).".
