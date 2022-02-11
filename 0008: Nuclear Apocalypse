@@ -26,6 +26,7 @@ Section - Priority Notes -------------------------------------------------------
 [Implement enemies and combat, finish attack X with Y command]
 [Implement more rooms, items]
 [Implement money / trade system]
+[Implement hunger / thirst]
 
 Section - Gameplay Rules -----------------------------------------------------------------
 
@@ -77,7 +78,7 @@ When play begins:
 	now the defense of the player is 0;
 	now the radiation of the player is 0;
 	now the money of the player is 0;
-	say "Would you like to be male (Y) or female (N)?";
+	say "Would you like to be male (Y) or female (N)?"; [may be removed]
 	if the player consents:
 		now the player is male;
 		let x be a random number from 1 to 4;
@@ -100,7 +101,7 @@ When play begins:
 			now the name of the player is "Max";
 		if x is 4: 
 			now the name of the player is "Jane";
-	say "Your name is [name of the player]. If you didn't like your name, too bad. Push a key to continue.";
+	say "Your name is [name of the player]. If you didn't like your name, too bad. Push a key to continue."; [end of "may be removed"]
 	wait for any key;
 	clear the screen; 
 	say "[paragraph break]        You weren't a newspaper type of person, but when the first bomb exploded in New York, you made sure to read them. A terrorist had rigged some type of bomb. The UN responded with embargoes, threats, outright war. And the enemy sent more. More nukes. The UN had no other choice. No choice other than the Cold War era idea of Mutually Assured Destruction. They were MAD, so the bombs continued. After the first day, a cruel sense of revenge. After the second, doubt. Doubt that they had made the right decision After the third, nothing remained. Nothing but a ruined world, rampant extinction and fear. ";
@@ -126,7 +127,10 @@ A person has a number called perception.
 A person has a number called money.
 A person has some text called name.
 
-Section - Rooms and Scenery ---------------------------------------------------------------
+Section - Regions, Rooms and Scenery ------------------------------------------------------
+
+Home is a region.
+Homemade Bunker, Control Room, Garden Center, Wrecked Bedroom is in Home.
 
 Homemade Bunker is a room.
 The description of Homemade Bunker is "A rather coarse, homemade bunker. Various necessities line the walls - [bold type]bed, water purifier, storage unit [roman type]and the like. Going up leads to the ruins of the house. South leads to a garden, and west to a room filled with old technology.".
@@ -302,14 +306,14 @@ ammunition is a kind of thing.
 drug is a kind of thing.
 accessory is a kind of thing.
 armor is a kind of thing.
-weapon is a kind of thing.
+weapon is a kind of thing. [weapon is pretty loose definition - anything that goes in your hands]
 weapon can be singleHand or doubleHand.
 weapon can be equipped or unequipped.
 weapon can be ranged or melee.
 
 dirty water is a kind of drink.
 The indefinite article of dirty water is "some".
-The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]boil[roman type] or [bold type]purify[roman type] will help.".
+The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]purify[roman type] will help.".
 [(quantity) dirty water is in (location)]
 
 clean water is a kind of drink.
@@ -337,9 +341,6 @@ Section - Unexcusable Cheats----------------------------------------------------
 Nonexistence is a room. 
 The description of Nonexistence is "You don't exist! You shouldn't even be here. That aside, items will be here, and NPCs as well.".
 
-cheater is a truth state that varies.
-cheater is initially false.
-
 shufflingStats is an action applying to nothing.
 Understand "shuffle stats" as shufflingStats.
 Report shufflingStats:
@@ -349,7 +350,7 @@ Report shufflingStats:
 	now the charisma of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
 	now the intelligence of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
 	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
-	now cheater is true;
+	now the name of the player is "Pumpkin Eater";
 	say "Cheater! - stats reshuffled.".
 
 upgrading is an action applying to nothing.
@@ -361,7 +362,7 @@ Report upgrading:
 	now the charisma of the player is the charisma of the player + 1;
 	now the intelligence of the player is the intelligence of the player + 1;
 	now the perception of the player is the perception of the player + 1;
-	now cheater is true;
+	now the name of the player is "Pumpkin Eater";
 	say "Cheater! - stats upgraded.".
 
 Section - Tables of Reference Information--------------------------------------------------
@@ -407,9 +408,41 @@ Understand "attack [something] with [weapon]" as RedefinedAttacking.
 Report RedefinedAttacking:
 	say "stabby stabby stab stab (WIP).".
 
-M14 is a weapon.
-M14 is ranged.
-M14 is doubleHand.
-M14 is unequipped.
-M14 is in Homemade Bunker.
-The description of M14 is "A stupid M14 for demonstration purposes.".
+[Combat scene ----------------------------------------------------------------------------]
+
+combatFlag is a truth state that varies.
+combatFlag is initially false.
+
+combat is a scene.
+combat begins when combatFlag is true.
+
+when combat begins:
+	say "Mortal combat has begun.".
+
+when combat ends:
+	say "Somebody died.".'
+
+[Combat structure
+if player is ambushed, enemy attacks
+print enemy info - hp, def
+print player info - hp, def, other stats
+ask for options
+    1: Attack - attack
+    2: Hide - no dmg this and next turn if successful
+    3: Item - use item
+    4: Talk - talk to enemy
+    5: Flee - run away, end combat
+player inputs choice
+print player action and aftermath
+print enemy attack and aftermath
+wait for any key
+clear screen
+wait for any key]
+
+[
+let enemySet be a random enemy from table of random enemies
+if canAmbush of enemySet is true:
+    now the hp of the player is [math stuff]
+say "[hp of enemySet] [def of enemySet]"
+say "stats of the player]
+]
