@@ -22,9 +22,8 @@ Test me with "jump / look / z"
 
 Section - Priority Notes -----------------------------------------------------------------
 
-[Implement combat system]
 [Implement XP leveling system]
-[Implement wandering enemies via recurring scenes]
+[Implement enemies and combat, finish attack X with Y command]
 [Implement more rooms, items]
 [Implement money / trade system]
 
@@ -57,16 +56,6 @@ Check reading:
 		
 Carry out reading:
 	say "[reading-material of the noun]".
-	
-[a definition for on/off types of lights]
-An electric light is a kind of device. 
-Carry out switching on an electric light: 
-	now the noun is lit.
- 
-Carry out switching off an electric light: 
-	now the noun is unlit.
-
-The examine devices rule is not listed in the carry out examining rules.
 
 [will make the status bar]
 Rule for constructing the status line:
@@ -186,6 +175,48 @@ Section - Actions --------------------------------------------------------------
 
 [reading command - see Section Gameplay Rules]
 
+[var for hands. 0 is hands free, 2 is both occupied]
+amountEquipped is a number that varies.
+amountEquipped is initially 0.
+
+[equip command for weaponry]
+equipping is an action applying to one thing.
+Understand "equip [something]" as equipping.
+Report equipping:
+	if amountEquipped is 0:
+		if the noun is singleHand:
+			now amountEquipped is amountEquipped + 1;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+		if the noun is doubleHand:
+			now amountEquipped is amountEquipped + 2;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+	else if amountEquipped is 1:
+		if the noun is singleHand:
+			now amountEquipped is amountEquipped + 1;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+		if the noun is doubleHand:
+			say "That would require a third hand.";
+	else if amountEquipped is 2:
+		say "You only have two hands!".
+
+[unequip command for weaponry]
+unequipping is an action applying to one thing.
+Understand "unequip [something]" as unequipping.
+Report unequipping:
+	if the noun is doubleHand:
+		now amountEquipped is amountEquipped - 2;
+		now the noun is unequipped;
+		say "You put [the noun] away.";
+	else if the noun is singleHand:
+		now amountEquipped is amountEquipped - 1;
+		now the noun is unequipped;
+		say "You put [the noun] away.";
+	else:
+		say "You're not even holding it.".
+
 [for sleeping in Homemade Bunker's bed]
 Understand the command "sleep" as something new. 
 SleepingN is an action applying to nothing.
@@ -197,14 +228,16 @@ Report sleepingN:
 	otherwise:
 		say "Shouldn't you have a bed first?".
 		
-[for getting water from water purifier in Homemade Bunker]
+[for getting water from water purifier in Homemade Bunker][
 Getting water is an action applying to nothing.
 Understand "get water" as getting water.
 Report getting water:
 	if the player is in Homemade Bunker:
-		say "WIP. Will be able to receive item eventually.";
+		say "A bottle of water pops out of the purifier into your waiting hands.";
+		let x be the number of clean water carried by the player;
+		now the player carries (x + 1) clean water;
 	otherwise:
-		say "You should probably find a purifier first.".
+		say "You should probably find a purifier first.".]
 
 [for defense activation in Control Room]
 defensesActivated is a truth state that varies.
@@ -235,7 +268,7 @@ Report getting food:
 Helping is an action applying to nothing.
 Understand "help" as helping.
 Report helping:
-	say "Say help <number> for more information. [line break]1: Stat descriptions. [line break]2: Cheating".
+	say "Say help <number> for more information. [line break]1: Stat descriptions. [line break]2: Cheating[line break]".
 
 [help section 1]
 HelpingOne is an action applying to nothing.
@@ -252,45 +285,49 @@ Report HelpingTwo:
 
 Section - Items----------------------------------------------------------------------------
 
-The backpack is a thing.
-The backpack is an closed container in Homemade Bunker.
-The backpack is wearable.
-The backpack is a player's holdall.
-Understand "backp" and "bpack" and "bp" as the backpack.
-The description of the backpack is "A rather nice military style backpack. It never seems to be too heavy, or full.".
+[a definition for on/off types of lights, currently unused.]
+An electric light is a kind of device. 
+Carry out switching on an electric light: 
+	now the noun is lit.
+ 
+Carry out switching off an electric light: 
+	now the noun is unlit.
 
-The flashlight is a thing.
-The flashlight is in the backpack.
-The flashlight is an electric light.
-Understand "flash" and "light" as the flashlight.
-The description of flashlight is "A long black metal flashlight. Bright and rather durable. [if the flashlight is lit]It is currently on.[otherwise]It is currently off.".
+The examine devices rule is not listed in the carry out examining rules.
 
-toxic water is a kind of thing.
-The indefinite article of toxic water is "some".
-The description of toxic water is "Water. Too poisonous to drink. Maybe some you can [bold type]purify[roman type] it with a water purifier?".
-[(quantity) toxic water is in (location)]
+[7 classes of things]
+food is a kind of thing. [raw meat, cooked meat, foraged food]
+drink is a kind of thing. [dirty water, clean water]
+ammunition is a kind of thing.
+drug is a kind of thing.
+accessory is a kind of thing.
+armor is a kind of thing.
+weapon is a kind of thing.
+weapon can be singleHand or doubleHand.
+weapon can be equipped or unequipped.
+weapon can be ranged or melee.
 
-dirty water is a kind of thing.
+dirty water is a kind of drink.
 The indefinite article of dirty water is "some".
-The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]boil[roman type] will help.".
+The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]boil[roman type] or [bold type]purify[roman type] will help.".
 [(quantity) dirty water is in (location)]
 
-clean water is a kind of thing.
+clean water is a kind of drink.
 The indefinite article of clean water is "some".
 The description of clean water is "Clean water. Good to drink.".
 3 clean water is in storage unit.
 
-foraged food is a kind of thing.
+foraged food is a kind of food.
 The indefinite article of foraged food is "some".
 The description of foraged food is "An assorted sundry collection of herbs, leaves, fruits and berries.".
 [(quantity) foraged food is in (location)]
 
-raw meat is a kind of thing.
+raw meat is a kind of food.
 The indefinite article of raw meat is "some".
 The description of raw meat is "Some raw meat. Would not be safe to eat. Try [bold type]cook[roman type]ing the meat.".
 [(quantity) raw meat is in (location)]
 
-cooked meat is a kind of thing.
+cooked meat is a kind of food.
 The indefinite article of cooked meat is "some".
 The description of cooked meat is "Some cooked meat. Could be steak, pork chops, chicken, rabbit, venison, etc.".
 3 cooked meat is in storage unit.
@@ -359,45 +396,20 @@ Name character
 
 Section - Work Area -----------------------------------------------------------------------
 
-[finish combat damage section, and unequipping weapons]
-
 Understand the commands "crack", "hit", "kill", "fight" as something new.
 Understand the commands "attack", "punch", "destroy" as something new.
 Understand the commands "thump", "torture", "wreck" as something new.
 Understand the commands "break", "murder", "smash" as something new.
-
-amountEquipped is a number that varies.
-amountEquipped is initially 0.
-
-A weapon is a kind of thing.
-A weapon can be singleHand or doubleHand. [singe hand or double hand]
-A weapon can be equipped or unequipped.
-A weapon can be ranged or melee.
-
-equipping is an action applying to one thing.
-Understand "equip [something]" as equipping.
-Report equipping:
-	if amountEquipped is 0:
-		if the noun is singleHand:
-			now amountEquipped is amountEquipped + 1;
-			now the noun is equipped;
-			say "[the noun] [are] equipped.";
-		if the noun is doubleHand:
-			now amountEquipped is amountEquipped + 2;
-			now the noun is equipped;
-			say "[the noun] [are] equipped.";
-	else if amountEquipped is 1:
-		if the noun is singleHand:
-			now amountEquipped is amountEquipped + 1;
-			now the noun is equipped;
-			say "[the noun] [are] equipped.";
-		if the noun is doubleHand:
-			say "That would require a third hand.";
-	else if amountEquipped is 2:
-		say "You only have two hands!".
 
 RedefinedAttacking is an action applying to two things.
 Understand "attack [something] with [weapon]" as RedefinedAttacking.
 
 Report RedefinedAttacking:
 	say "stabby stabby stab stab (WIP).".
+
+M14 is a weapon.
+M14 is ranged.
+M14 is doubleHand.
+M14 is unequipped.
+M14 is in Homemade Bunker.
+The description of M14 is "A stupid M14 for demonstration purposes.".
