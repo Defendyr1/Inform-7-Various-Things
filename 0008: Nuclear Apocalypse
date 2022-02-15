@@ -410,30 +410,4 @@ Report RedefinedAttacking:
 
 [Combat scene ----------------------------------------------------------------------------]
 
-combatFlag is a truth state that varies.
-combatFlag is initially false.
-
-combat is a scene.
-combat begins when combatFlag is true.
-
-when combat begins:
-	say "Mortal combat has begun.".
-
-when combat ends:
-	say "Somebody died.".
-
-[
-let enemySet be a random enemy from table of random enemies
-if canAmbush of enemySet is true:
-    now the hp of the player is [math stuff]
-repeat while endFight? is not true:
-say "[hp of enemySet] [def of enemySet]"
-say "stats of the player"
-print options
-wait for input
-print rxn
-print enemy attack and rxn
-wait for any key
-clear screen
-wait for any key
-]
+[WIP]
