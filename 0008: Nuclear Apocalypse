@@ -420,7 +420,7 @@ when combat begins:
 	say "Mortal combat has begun.".
 
 when combat ends:
-	say "Somebody died.".'
+	say "Somebody died.".
 
 [
 let enemySet be a random enemy from table of random enemies
