@@ -111,7 +111,7 @@ When play begins:
 
 Section - Player Character-----------------------------------------------------------------
 
-The carrying capacity of the player is 5.
+The carrying capacity of the player is 10.
 The description of the player is "You don't have a mirror, but you're a [if the player is male]handsome devil[end if][if the player is female]beautiful lady[end if] nonetheless.".
 
 A person has a number called HP.
@@ -421,23 +421,6 @@ when combat begins:
 
 when combat ends:
 	say "Somebody died.".'
-
-[Combat structure
-if player is ambushed, enemy attacks
-print enemy info - hp, def
-print player info - hp, def, other stats
-ask for options
-    1: Attack - attack
-    2: Hide - no dmg this and next turn if successful
-    3: Item - use item
-    4: Talk - talk to enemy
-    5: Flee - run away, end combat
-player inputs choice
-print player action and aftermath
-print enemy attack and aftermath
-wait for any key
-clear screen
-wait for any key]
 
 [
 let enemySet be a random enemy from table of random enemies
