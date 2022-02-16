@@ -1,1 +1,54 @@
+"Cobalt" by neophyte.
+The story headline is "The aftermath of a salted nuclear bomb.".
+
+Include Basic Screen Effects by Emily Short.
+Use verbose room descriptions.
+
+[--------------------------------------------------------------------------------------------------------]
+[When Play Begins ---------------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+When play begins:
+	say "Starting the game...";
+	now the strength of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6); 
+	now the dexterity of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the stamina of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the charisma of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the intelligence of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the MaxHP of the player is 10;
+	now the HP of the player is 10;
+	now the defense of the player is 0;
+	now the radiation of the player is 0;
+	now the money of the player is 0;
+	say ""
+	wait for any key;
+	clear the screen; 
+	say "[paragraph break]        In the middle of the day, you were working at home. The pandemic was annoying, but at least you could do your stupid office job at home instead of dealing with people whine and complain about their life. Now, they never regarded you more than an anthropophobic paranoid, but you were prepared. You were porcelain turned ivory turned steel. You would survive.";
+	wait for any key;
+	say "[paragraph break]        Hiding in your homemade bunker, you listened to the hand-cranked radio. Apparently, some nation had some dangerous, deadly mutation of the virus. As if the pandemic wasn't bad enough. So, they went thermonuclear in their reaction, after the virus' victims swarmed and killed thousands. The radiation from some of their salted bombs covered the earth. As you listened, the radio broke. You waited in your bunker for several months, but as you ran low on your food, you would have to leave its safety and venture off to the irradiated landscape.";
+	wait for any key.
+
+[--------------------------------------------------------------------------------------------------------]
+[The Player Character -----------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+The carrying capacity of the player is 10.
+The description of the player is "You don't even have a mirror. And, well, you probably wouldn't want to look on your fantastic self.".
+
+A person has a number called HP.
+A person has a number called MaxHP.
+A person has a number called defense.
+A person has a number called radiation.
+A person has a number called strength.
+A person has a number called dexterity.
+A person has a number called stamina.
+A person has a number called charisma.
+A person has a number called intelligence.
+A person has a number called perception.
+A person has a number called money.
+
+[--------------------------------------------------------------------------------------------------------]
+[]
+[--------------------------------------------------------------------------------------------------------]
 
