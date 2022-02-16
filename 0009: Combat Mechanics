@@ -3,10 +3,6 @@
 Laboratory is a room.
 "A description of a room.".
 
-Rule for printing the name of a dark room: do nothing. [prevent room names]
-Rule for printing the description of a dark room: do nothing. [prevent room descriptions]
-Rule for printing the announcement of darkness: do nothing. [if lights are turned off, no announcements]
-
 lit is an action applying to nothing.
 understand "lit" as lit.
 Report lit:
@@ -14,27 +10,6 @@ Report lit:
 		now Laboratory is lighted;
 	else:
 		now Laboratory is dark.
-
-combatFlag is a truth state that varies.
-combatFlag is initially false.
-
-combat is a scene.
-combat begins when combatFlag is true.
-
-when combat begins:
-	now the command prompt is "Combat >>";
-	say "Mortal combat has begun.".
-
-Every turn during combat:
-	say "You're fighting for your life.".
-
-check going during combat:
-	say "If you're trying to run away, try [bold type]flee[roman type]ing instead.";
-	stop the action.
-
-when combat ends:
-	now the command prompt is ">";
-	say "Somebody died.".
 
 combatFlagging is an action applying to nothing.
 Understand "combat" as combatFlagging.
@@ -47,3 +22,31 @@ Report combatFlagging:
 		now combatFlag is false;
 		now all rooms are lighted;
 		say "deactivated.";
+
+[--------------------------------------------------------------------------------------------------------]
+
+Rule for printing the name of a dark room: do nothing. [prevent room names]
+Rule for printing the description of a dark room: do nothing. [prevent room descriptions]
+Rule for printing the announcement of darkness: do nothing. [if lights are turned off, no announcements]
+
+combatFlag is a truth state that varies.
+combatFlag is initially false.
+
+combat is a scene.
+combat begins when combatFlag is true.
+combat ends when combatFlag is false.
+
+when combat begins:
+	now the command prompt is ">>";
+	say "Mortal combat has begun.".
+
+Every turn during combat:
+	say "You're fighting for your life.".
+
+check going during combat:
+	say "If you're trying to run away, try [bold type]flee[roman type]ing instead.";
+	stop the action.
+
+when combat ends:
+	now the command prompt is ">";
+	say "Somebody died.".
