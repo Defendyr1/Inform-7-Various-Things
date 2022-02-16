@@ -1,11 +1,11 @@
 "Cobalt" by neophyte.
-The story headline is "The aftermath of a salted nuclear bomb.".
+The story headline is "It's like Fallout, but not quite.".
 
 Include Basic Screen Effects by Emily Short.
 Use verbose room descriptions.
 
 [--------------------------------------------------------------------------------------------------------]
-[When Play Begins ---------------------------------------------------------------------------------------]
+[The When Play Begins Rule ------------------------------------------------------------------------------]
 [--------------------------------------------------------------------------------------------------------]
 
 When play begins:
@@ -21,10 +21,14 @@ When play begins:
 	now the defense of the player is 0;
 	now the radiation of the player is 0;
 	now the money of the player is 0;
-	say ""
+	say "Your stats are on the status line. Would you like a reshuffle of the testing stats?[line break]The testing stats are the six stats below your health, defense and radiation. [line break]Y/N >";
+	if the player consents:
+		try shufflingStats;
+	else:
+		say "Ok. It won't show until you go through the rest of this. Sorry. Push any button to continue.";
 	wait for any key;
 	clear the screen; 
-	say "[paragraph break]        In the middle of the day, you were working at home. The pandemic was annoying, but at least you could do your stupid office job at home instead of dealing with people whine and complain about their life. Now, they never regarded you more than an anthropophobic paranoid, but you were prepared. You were porcelain turned ivory turned steel. You would survive.";
+	say "[paragraph break]        In the middle of the day, you were working at home. The pandemic was annoying, but at least you could do your stupid office job at home instead of dealing with people whine and complain about their life. The air raid sirens went off, as you thought about how the others would sit there and whine to you. The air raid siren went on for another minute, then cut off. You slowly, steadily went down to your bunker. You thought about how other people would deal with this. Now, they never regarded you more than an anthropophobic paranoid, but you were prepared. You were porcelain turned ivory turned steel. You were prepared. You would survive.";
 	wait for any key;
 	say "[paragraph break]        Hiding in your homemade bunker, you listened to the hand-cranked radio. Apparently, some nation had some dangerous, deadly mutation of the virus. As if the pandemic wasn't bad enough. So, they went thermonuclear in their reaction, after the virus' victims swarmed and killed thousands. The radiation from some of their salted bombs covered the earth. As you listened, the radio broke. You waited in your bunker for several months, but as you ran low on your food, you would have to leave its safety and venture off to the irradiated landscape.";
 	wait for any key.
@@ -49,6 +53,269 @@ A person has a number called perception.
 A person has a number called money.
 
 [--------------------------------------------------------------------------------------------------------]
-[]
+[Gameplay Rules -----------------------------------------------------------------------------------------]
 [--------------------------------------------------------------------------------------------------------]
 
+Rule for printing room description details of a closed container: 
+	stop.
+
+Rule for printing the name of a closed container (called C) while taking inventory:
+	say "[printed name of C]";
+	omit contents in listing.
+
+Rule for constructing the status line:
+	fill status bar with Table of Status Bar;
+	rule succeeds.
+
+[--------------------------------------------------------------------------------------------------------]
+[Miscellaneous Reporting of Actions ---------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+Report taking something:
+	say "Taken. [run paragraph on]";
+	try examining the noun instead.
+
+[--------------------------------------------------------------------------------------------------------]
+[New and Redefined Actions ------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+[***READING***]
+A thing has some text called the reading-material.
+The reading-material of a thing is usually "".
+
+Understand the command "read" as something new.
+Reading is an action applying to one thing and requiring light.
+Understand "read [something]" as reading.
+
+Check reading:
+	if the reading-material of the noun is "":
+		try examining the noun instead.
+		
+Carry out reading:
+	say "[reading-material of the noun]".
+
+[***Equipping/Unequipping Weaponry***]
+[var for hands. 0 is hands free, 2 is both occupied]
+amountEquipped is a number that varies.
+amountEquipped is initially 0.
+
+[equip command for weaponry]
+equipping is an action applying to one thing.
+Understand "equip [something]" as equipping.
+Report equipping:
+	if amountEquipped is 0:
+		if the noun is singleHand:
+			now amountEquipped is amountEquipped + 1;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+		if the noun is doubleHand:
+			now amountEquipped is amountEquipped + 2;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+	else if amountEquipped is 1:
+		if the noun is singleHand:
+			now amountEquipped is amountEquipped + 1;
+			now the noun is equipped;
+			say "[the noun] [are] equipped.";
+		if the noun is doubleHand:
+			say "That would require a third hand.";
+	else if amountEquipped is 2:
+		say "You only have two hands!".
+
+[unequip command for weaponry]
+unequipping is an action applying to one thing.
+Understand "unequip [something]" as unequipping.
+Report unequipping:
+	if the noun is doubleHand:
+		now amountEquipped is amountEquipped - 2;
+		now the noun is unequipped;
+		say "You put [the noun] away.";
+	else if the noun is singleHand:
+		now amountEquipped is amountEquipped - 1;
+		now the noun is unequipped;
+		say "You put [the noun] away.";
+	else:
+		say "You're not even holding it.".
+
+[***Sleep-Heal***]
+Understand the command "sleep" as something new. 
+SleepingN is an action applying to nothing.
+Understand "sleep" and "sleep in bed" as sleepingN.
+Report sleepingN:
+	if the player is in Homemade Bunker:
+		say "You decide to take a quick nap. zzz.";
+		now the HP of the player is the MaxHP of the player;
+	otherwise:
+		say "Shouldn't you have a bed first?".
+
+[***RETRIEVAL OF ITEMS IN HOMEMADE BUNKER***]
+[for getting water from water purifier in Homemade Bunker]
+Getting water is an action applying to nothing.
+Understand "get water" as getting water.
+Report getting water:
+	if the player is in Homemade Bunker:
+		say "WIP. Will be able to receive item eventually.";
+	otherwise:
+		say "You should probably find a purifier first.".
+
+[for getting food from the garden in the Garden Center]
+Getting food is an action applying to nothing.
+Understand "get food" as getting food.
+Report getting food:
+	if the player is in Garden Center:
+		say "WIP. Will be able to receive item eventually.";
+	otherwise:
+		say "Shouldn't you find a food source first?".
+
+[--------------------------------------------------------------------------------------------------------]
+[Items - Must be redone. --------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+[a definition for on/off types of lights, currently unused.]
+An electric light is a kind of device. 
+Carry out switching on an electric light: 
+	now the noun is lit.
+ 
+Carry out switching off an electric light: 
+	now the noun is unlit.
+
+The examine devices rule is not listed in the carry out examining rules.
+
+[7 classes of things]
+food is a kind of thing. [raw meat, cooked meat, foraged food]
+drink is a kind of thing. [dirty water, clean water]
+ammunition is a kind of thing.
+drug is a kind of thing.
+accessory is a kind of thing.
+armor is a kind of thing.
+weapon is a kind of thing. [weapon is pretty loose definition - anything that goes in your hands]
+weapon can be singleHand or doubleHand.
+weapon can be equipped or unequipped.
+weapon can be ranged or melee.
+
+dirty water is a kind of drink.
+The indefinite article of dirty water is "some".
+The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]purify[roman type] will help.".
+[(quantity) dirty water is in (location)]
+
+clean water is a kind of drink.
+The indefinite article of clean water is "some".
+The description of clean water is "Clean water. Good to drink.".
+3 clean water is in storage unit.
+
+foraged food is a kind of food.
+The indefinite article of foraged food is "some".
+The description of foraged food is "An assorted sundry collection of herbs, leaves, fruits and berries.".
+[(quantity) foraged food is in (location)]
+
+raw meat is a kind of food.
+The indefinite article of raw meat is "some".
+The description of raw meat is "Some raw meat. Would not be safe to eat. Try [bold type]cook[roman type]ing the meat.".
+[(quantity) raw meat is in (location)]
+
+cooked meat is a kind of food.
+The indefinite article of cooked meat is "some".
+The description of cooked meat is "Some cooked meat. Could be steak, pork chops, chicken, rabbit, venison, etc.".
+3 cooked meat is in storage unit.
+
+[--------------------------------------------------------------------------------------------------------]
+[Help Section -------------------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+Helping is an action applying to nothing.
+Understand "help" as helping.
+Report helping:
+	say "Say help <number> for more information. [line break]1: Stat descriptions. [line break]2: Cheating[line break]".
+
+HelpingOne is an action applying to nothing.
+Understand "help 1" and "help one" as HelpingOne.
+Report HelpingOne:
+	say "HP is your current health points. [line break]MaxHP is the maximum health you may get. [line break]Defense is how much defense you have. It also defends against radiation. [line break]Radiation is how much radiation has accumulated in your system. A high number is dangerous.[line break]Strength is a measure of physical force, how much brute force you have.[line break]Dexterity is a measure of skill, how well one can use their hands. [line break]Stamina is a measure of endurance, of toughness. More endurance affects HP and Strength. [line break]Charisma is how likable you are. May affect NPC conversations. [line break]Intelligence is how smart you are, whether you know something or not. [line break]Perception is how effectively you can use that intelligence. It is acts as inspiration or noticing other things.".
+
+HelpingTwo is an action applying to nothing.
+Understand "help 2" and "help two" as HelpingTwo.
+Report HelpingTwo:
+	say "Available cheats: [line break]shuffle stats -> shuffle beginning stats, all stats are between 3 and 18.[line break]upgrade me -> +1 to the 6 stats.".
+
+[--------------------------------------------------------------------------------------------------------]
+[Rooms, Regions and Scenery -----------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+Home is a region.
+Homemade Bunker, Control Room, Garden Center, Wrecked Bedroom is in Home.
+
+Homemade Bunker is a room.
+The description of Homemade Bunker is "A rather coarse, homemade bunker. Various necessities line the walls - [bold type]bed, water purifier, storage unit [roman type]and the like. Going up leads to the ruins of the house. South leads to a garden, and west to a room filled with old technology.".
+
+Bed is scenery in Homemade Bunker.
+The description of Bed is "A ridiculously soft, comfy bed. Makes you wish you had slept through the apocalypse, or forever.".
+	
+water purifier is scenery in Homemade Bunker.
+Understand "purifier" and "w purifier" and "water p" as the water purifier.
+The description of water purifier is "It's a strange, horizontal tube lying upon three vertical tubes. Somehow, it creates clean water for you to drink. All you have to do is [bold type]get water[roman type], although, it does run out.".
+
+storage unit is scenery in Homemade Bunker.
+storage unit is a closed container.
+storage unit is a player's holdall.
+Understand "storage" and "storage unit" and "unit" as storage unit. 
+The description of storage unit is "A storage unit. Contains a lot of things, and is rather nice to have.".
+
+Control Room is a room.
+Control Room is west of Homemade Bunker.
+The description of Control Room is "A shabby concrete and iron structure. Around the [bold type]old technology[roman type] lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
+
+Faraday cage is scenery in Control Room. 
+Understand "cage" and "faraday" and "f cage" as the faraday cage.
+The description of the faraday cage is "It looks like chicken coop wire strung about all the electronics. It'll protect against EMPs, so you shouldn't mess with it.".
+
+nuclearBattery is scenery in Control Room.
+Understand "RTG" and "nuclear battery" as nuclearBattery.
+The description of nuclearBattery is "A dangerous battery which gets energy from decaying radioactive materials. It also emits a fair amount of heat. You should definitely not mess with it, unless you like cancer.".
+
+Control Panels is scenery in Control Room.
+Understand "old tech" and "old technology" and "control p" and "panels" as control panels.
+The description of control panels is "A cobbled together piece of computer equipment. Apparenetly the lights, garden center and water purification are all automated already.".
+
+Garden Center is a room.
+Garden Center is south of Homemade Bunker.
+The description of Garden Center is "Rows of plants grow under flourescent lights, presumably powered from the control room. The watering system is all automatic, and there seems to be plenty of variety for food. You can [bold type]get food[roman type], although it is not infinite. The rest of the bunker lies to the north.".
+
+Wrecked Bedroom is a room.
+Wrecked Bedroom is above Homemade Bunker.
+The description of Wrecked Bedroom is "A master bedroom, reasonably furnished. A trapdoor leads down to the bunker. To the east leads the rest of the house.".
+
+[--------------------------------------------------------------------------------------------------------]
+[Tables of Reference Information ------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+Table of Status Bar
+left	central	right 
+"HP: [HP of the player]/[MaxHP of the player] | DEF: [defense of the player] | RAD: [radiation of the player]"	""	"[map region of the location]"
+"STR: [strength of the player] | DEX: [dexterity of the player] | STA: [stamina of the player] | CHA: [charisma of the player] | INT: [intelligence of the player] | PER: [perception of the player]"	""	"[location of the player]"
+
+[--------------------------------------------------------------------------------------------------------]
+[Unfair Cheating ----------------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+Nonexistence is a room. 
+The description of Nonexistence is "You don't exist! You shouldn't even be here. That aside, items will be here, and NPCs as well.".
+
+shufflingStats is an action applying to nothing.
+Understand "shuffle stats" as shufflingStats.
+Report shufflingStats:
+	now the strength of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6); 
+	now the dexterity of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the stamina of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the charisma of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the intelligence of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6).
+
+upgrading is an action applying to nothing.
+understand "upgrade me" as upgrading.
+Report upgrading:
+	now the strength of the player is the strength of the player + 1;
+	now the dexterity of the player is the dexterity of the player + 1;
+	now the stamina of the player is the stamina of the player + 1;
+	now the charisma of the player is the charisma of the player + 1;
+	now the intelligence of the player is the intelligence of the player + 1;
+	now the perception of the player is the perception of the player + 1.
