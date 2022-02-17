@@ -230,7 +230,7 @@ Report helping:
 HelpingOne is an action applying to nothing.
 Understand "help 1" and "help one" as HelpingOne.
 Report HelpingOne:
-	say "HP is your current health points. [line break]MaxHP is the maximum health you may get. [line break]Defense is how much defense you have. It also defends against radiation. [line break]Radiation is how much radiation has accumulated in your system. A high number is dangerous.[line break]Strength is a measure of physical force, how much brute force you have.[line break]Dexterity is a measure of skill, how well one can use their hands. [line break]Stamina is a measure of endurance, of toughness. More endurance affects HP and Strength. [line break]Charisma is how likable you are. May affect NPC conversations. [line break]Intelligence is how smart you are, whether you know something or not. [line break]Perception is how effectively you can use that intelligence. It is acts as inspiration or noticing other things.".
+	say "HP is your current health points. [line break]MaxHP is the maximum health you may get. [line break]Defense is how much defense you have. It also defends against radiation. [line break]Radiation is how much radiation has accumulated in your system. A high number is dangerous.[line break]Strength is a measure of physical force, how much brute force you have.[line break]Dexterity is a measure of skill, how well one can use their hands. [line break]Stamina is a measure of endurance, of toughness. More endurance affects HP. [line break]Charisma is how likable you are. May affect NPC conversations. [line break]Intelligence is how smart you are, whether you know something or not. [line break]Perception is how effectively you can use that intelligence. It is acts as inspiration or noticing other things.".
 
 HelpingTwo is an action applying to nothing.
 Understand "help 2" and "help two" as HelpingTwo.
@@ -319,3 +319,31 @@ Report upgrading:
 	now the charisma of the player is the charisma of the player + 1;
 	now the intelligence of the player is the intelligence of the player + 1;
 	now the perception of the player is the perception of the player + 1.
+
+[--------------------------------------------------------------------------------------------------------]
+[Comments and Errata ------------------------------------------------------------------------------------]
+[--------------------------------------------------------------------------------------------------------]
+
+[
+Implement XP leveling system
+Implement enemies and combat, finish attack X with Y command
+Implement more rooms, items, and a story (duh)
+Implement money / trade system
+Implement hunger / thirst
+
+Types of checks for each
+STR - combat (melee affecting damage), brute force, leveling up to determine carry capacity
+DEX - lockpicking, etcetera skill testing, combat (melee chance of hitting, ranged affecting damage)
+STA - carry capacity, defense, HP during level-up
+CHA - talking to people, boosts trading, helps combat action 'converse'
+INT - intelligence checks, creating new items, used in 'converse' action (w/o the PER addition)
+PER - combat (ranged affecting chance), used when rolling int checks (inspiration), increases loot drops 
+
+Leveling up
+XP is probably a reskin of the 'score' / scoring mechanic
+After XP is equal
+	then level is level + 1
+	carry capacity is increased by sta + str / str
+	HP is HP + sta / 6
+	player can pick one stat to increase
+]
