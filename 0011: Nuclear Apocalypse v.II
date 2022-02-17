@@ -4,18 +4,13 @@ The story headline is "It's like Fallout, but not quite.".
 Include Basic Screen Effects by Emily Short.
 Use verbose room descriptions.
 
-[--------------------------------------------------------------------------------------------------------]
-[The When Play Begins Rule ------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[The When Play Begins Rule -----------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 When play begins:
 	say "Starting the game...";
-	now the strength of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6); 
-	now the dexterity of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
-	now the stamina of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
-	now the charisma of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
-	now the intelligence of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
-	now the perception of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
+	shuffleStats;
 	now the MaxHP of the player is 10;
 	now the HP of the player is 10;
 	now the defense of the player is 0;
@@ -23,8 +18,7 @@ When play begins:
 	now the money of the player is 0;
 	say "Your stats are on the status line. Would you like a reshuffle of the testing stats?[line break]The testing stats are the six stats below your health, defense and radiation. [line break]Y/N >";
 	if the player consents:
-		try shufflingStats;
-	else:
+		shuffleStats;
 		say "Ok. It won't show until you go through the rest of this. Sorry. Push any button to continue.";
 	wait for any key;
 	clear the screen; 
@@ -33,12 +27,12 @@ When play begins:
 	say "[paragraph break]        Hiding in your homemade bunker, you listened to the hand-cranked radio. Apparently, some nation had some dangerous, deadly mutation of the virus. As if the pandemic wasn't bad enough. So, they went thermonuclear in their reaction, after the virus' victims swarmed and killed thousands. The radiation from some of their salted bombs covered the earth. As you listened, the radio broke. You waited in your bunker for several months, but as you ran low on your food, you would have to leave its safety and venture off to the irradiated landscape.";
 	wait for any key.
 
-[--------------------------------------------------------------------------------------------------------]
-[The Player Character -----------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[The Player Character ----------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 The carrying capacity of the player is 10.
-The description of the player is "You don't even have a mirror. And, well, you probably wouldn't want to look on your fantastic self.".
+The description of the player is "You don't even have a mirror. And, well, you probably wouldn't want to look on your fantastic self right now.".
 
 A person has a number called HP.
 A person has a number called MaxHP.
@@ -52,9 +46,9 @@ A person has a number called intelligence.
 A person has a number called perception.
 A person has a number called money.
 
-[--------------------------------------------------------------------------------------------------------]
-[Gameplay Rules -----------------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Gameplay Rules ----------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 Rule for printing room description details of a closed container: 
 	stop.
@@ -67,17 +61,17 @@ Rule for constructing the status line:
 	fill status bar with Table of Status Bar;
 	rule succeeds.
 
-[--------------------------------------------------------------------------------------------------------]
-[Miscellaneous Reporting of Actions ---------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Miscellaneous Reporting of Actions --------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 Report taking something:
 	say "Taken. [run paragraph on]";
 	try examining the noun instead.
 
-[--------------------------------------------------------------------------------------------------------]
-[New and Redefined Actions ------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[New and Redefined Actions -----------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 [***READING***]
 A thing has some text called the reading-material.
@@ -167,9 +161,9 @@ Report getting food:
 	otherwise:
 		say "Shouldn't you find a food source first?".
 
-[--------------------------------------------------------------------------------------------------------]
-[Items - Must be redone. --------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Items - Must be redone. -------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 [a definition for on/off types of lights, currently unused.]
 An electric light is a kind of device. 
@@ -218,9 +212,9 @@ The indefinite article of cooked meat is "some".
 The description of cooked meat is "Some cooked meat. Could be steak, pork chops, chicken, rabbit, venison, etc.".
 3 cooked meat is in storage unit.
 
-[--------------------------------------------------------------------------------------------------------]
-[Help Section -------------------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Help Section ------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 Helping is an action applying to nothing.
 Understand "help" as helping.
@@ -235,11 +229,11 @@ Report HelpingOne:
 HelpingTwo is an action applying to nothing.
 Understand "help 2" and "help two" as HelpingTwo.
 Report HelpingTwo:
-	say "Available cheats: [line break]shuffle stats -> shuffle beginning stats, all stats are between 3 and 18.[line break]upgrade me -> +1 to the 6 stats.".
-
-[--------------------------------------------------------------------------------------------------------]
-[Rooms, Regions and Scenery -----------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+	say "Available cheats: [line break]upgrade me -> +1 to the 6 stats.".
+	
+[-------------------------------------------------------------------------------------------------------]
+[Rooms, Regions and Scenery ----------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 Home is a region.
 Homemade Bunker, Control Room, Garden Center, Wrecked Bedroom is in Home.
@@ -284,25 +278,24 @@ Wrecked Bedroom is a room.
 Wrecked Bedroom is above Homemade Bunker.
 The description of Wrecked Bedroom is "A master bedroom, reasonably furnished. A trapdoor leads down to the bunker. To the east leads the rest of the house.".
 
-[--------------------------------------------------------------------------------------------------------]
-[Tables of Reference Information ------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Tables of Reference Information -----------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 Table of Status Bar
 left	central	right 
 "HP: [HP of the player]/[MaxHP of the player] | DEF: [defense of the player] | RAD: [radiation of the player]"	""	"[map region of the location]"
 "STR: [strength of the player] | DEX: [dexterity of the player] | STA: [stamina of the player] | CHA: [charisma of the player] | INT: [intelligence of the player] | PER: [perception of the player]"	""	"[location of the player]"
 
-[--------------------------------------------------------------------------------------------------------]
-[Unfair Cheating ----------------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Unfair Cheating and Functions--------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 Nonexistence is a room. 
 The description of Nonexistence is "You don't exist! You shouldn't even be here. That aside, items will be here, and NPCs as well.".
 
-shufflingStats is an action applying to nothing.
-Understand "shuffle stats" as shufflingStats.
-Report shufflingStats:
+[since i actually use this as a function, i guess this isn't cheating.]
+to shuffleStats:
 	now the strength of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6); 
 	now the dexterity of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
 	now the stamina of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
@@ -320,9 +313,9 @@ Report upgrading:
 	now the intelligence of the player is the intelligence of the player + 1;
 	now the perception of the player is the perception of the player + 1.
 
-[--------------------------------------------------------------------------------------------------------]
-[Comments and Errata ------------------------------------------------------------------------------------]
-[--------------------------------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
+[Comments and Errata -----------------------------------------------------------------------------------]
+[-------------------------------------------------------------------------------------------------------]
 
 [
 Implement XP leveling system
