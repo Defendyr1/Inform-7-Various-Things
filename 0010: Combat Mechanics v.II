@@ -1,1 +1,37 @@
-[Attempt to create a combat system based off of Combat Mechanics, without relying on dark/lit rooms.]
+"Untitled"
+
+Laboratory is a room.
+"A reasonable description of the laboratory.".
+
+joe is a thing.
+joe is in Laboratory.
+
+combatting is an action applying to nothing.
+Understand "ac" as combatting.
+Report combatting:
+	if combatFlag is true:
+		now combatFlag is false;
+	else:
+		now combatFlag is true.
+
+combatFlag is a truth state that varies.
+combatFlag is initially false.
+
+combat is a scene.
+combat begins when combatFlag is true.
+combat ends when combatFlag is false.
+
+when combat begins:
+	now the command prompt is ">>";
+	say "Mortal combat has begun.".
+
+Every turn during combat:
+	say "You're fighting for your life.".
+
+check going during combat:
+	say "If you're trying to run away, try [bold type]flee[roman type]ing instead.";
+	stop the action.
+
+when combat ends:
+	now the command prompt is ">";
+	say "Somebody died.".
