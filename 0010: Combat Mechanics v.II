@@ -1,10 +1,13 @@
 "Untitled"
 
+[maybe, have the title, a para. about the location, then a combat menu if active]
+
 Laboratory is a room.
 "A reasonable description of the laboratory.".
 
 joe is a thing.
 joe is in Laboratory.
+The description of joe is "A cup of Joe.".
 
 combatting is an action applying to nothing.
 Understand "ac" as combatting.
@@ -14,10 +17,14 @@ Report combatting:
 	else:
 		now combatFlag is true.
 
+checkFlag is an action applying to nothing.
+Understand "cf" as checkFlag.
+Report checkFlag: say "Flag: [combatFlag].".
+
 combatFlag is a truth state that varies.
 combatFlag is initially false.
 
-combat is a scene.
+combat is a recurring scene.
 combat begins when combatFlag is true.
 combat ends when combatFlag is false.
 
@@ -26,7 +33,7 @@ when combat begins:
 	say "Mortal combat has begun.".
 
 Every turn during combat:
-	say "You're fighting for your life.".
+	say "You're fighting for your life in the [location of the player].".
 
 check going during combat:
 	say "If you're trying to run away, try [bold type]flee[roman type]ing instead.";
