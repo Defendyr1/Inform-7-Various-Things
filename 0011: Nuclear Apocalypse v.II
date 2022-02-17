@@ -339,11 +339,23 @@ CHA - talking to people, boosts trading, helps combat action 'converse'
 INT - intelligence checks, creating new items, used in 'converse' action (w/o the PER addition)
 PER - combat (ranged affecting chance), used when rolling int checks (inspiration), increases loot drops 
 
-Leveling up
+Leveling up (should i only trigger this after combat?)
 XP is probably a reskin of the 'score' / scoring mechanic
 After XP is equal
 	then level is level + 1
 	carry capacity is increased by sta + str / str
 	HP is HP + sta / 6
 	player can pick one stat to increase
+	
+hunger/ thirst
+increase by 1 every turn? excepting passive actions -> inv, look, equip/unequip, wear, and combat scene
+items will be big in benefits - water bottle will decrease thirst by 25, food by 20
+
+money/trade
+money is a player variable, easier manipulation
+trade will be in npc talk, then "trade [x] for [y]" will be available or "buy [x]"
+Traders will not move around
+
+
+
 ]
