@@ -162,7 +162,7 @@ Report getting food:
 		say "Shouldn't you find a food source first?".
 
 [-------------------------------------------------------------------------------------------------------]
-[Items - Must be redone. -------------------------------------------------------------------------------]
+[Items -------------------------------------------------------------------------------------------------]
 [-------------------------------------------------------------------------------------------------------]
 
 [a definition for on/off types of lights, currently unused.]
@@ -175,42 +175,23 @@ Carry out switching off an electric light:
 
 The examine devices rule is not listed in the carry out examining rules.
 
-[7 classes of things]
-food is a kind of thing. [raw meat, cooked meat, foraged food]
-drink is a kind of thing. [dirty water, clean water]
-ammunition is a kind of thing.
-drug is a kind of thing.
-accessory is a kind of thing.
-armor is a kind of thing.
-weapon is a kind of thing. [weapon is pretty loose definition - anything that goes in your hands]
-weapon can be singleHand or doubleHand.
-weapon can be equipped or unequipped.
-weapon can be ranged or melee.
+[can be a consumable or a usable item]
+consumable is a kind of thing.
+item is a kind of thing.
 
-dirty water is a kind of drink.
-The indefinite article of dirty water is "some".
-The description of dirty water is "Water. Slightly dirty. Nothing a good [bold type]purify[roman type] will help.".
-[(quantity) dirty water is in (location)]
+[can be equipable, single/double handed]
+[has numerical stats as well]
+An item can be equipped or not equipped.
+An item can be singleHand or doubleHand.
+An item can be melee or ranged.
+An item has a number called damage.
+An item has a number called critHit. [percentage]
 
-clean water is a kind of drink.
-The indefinite article of clean water is "some".
-The description of clean water is "Clean water. Good to drink.".
-3 clean water is in storage unit.
-
-foraged food is a kind of food.
-The indefinite article of foraged food is "some".
-The description of foraged food is "An assorted sundry collection of herbs, leaves, fruits and berries.".
-[(quantity) foraged food is in (location)]
-
-raw meat is a kind of food.
-The indefinite article of raw meat is "some".
-The description of raw meat is "Some raw meat. Would not be safe to eat. Try [bold type]cook[roman type]ing the meat.".
-[(quantity) raw meat is in (location)]
-
-cooked meat is a kind of food.
-The indefinite article of cooked meat is "some".
-The description of cooked meat is "Some cooked meat. Could be steak, pork chops, chicken, rabbit, venison, etc.".
-3 cooked meat is in storage unit.
+An item is usually not equipped.
+An item is usually singleHand.
+An item is usually melee.
+The damage of an item is usually 0.
+The critHit of an item is usually 4. [4% chance]
 
 [-------------------------------------------------------------------------------------------------------]
 [Help Section ------------------------------------------------------------------------------------------]
@@ -256,7 +237,7 @@ The description of storage unit is "A storage unit. Contains a lot of things, an
 
 Control Room is a room.
 Control Room is west of Homemade Bunker.
-The description of Control Room is "A shabby concrete and iron structure. Around the [bold type]old technology[roman type] lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
+The description of Control Room is "A shabby concrete and iron structure. Around the old technology lies a Faraday cage, protecting it from EMPs. The technology is still functional, powered by what appears to be a stolen RTG nuclear battery. The rest of the bunker lies to the east.".
 
 Faraday cage is scenery in Control Room. 
 Understand "cage" and "faraday" and "f cage" as the faraday cage.
@@ -332,7 +313,7 @@ CHA - talking to people, boosts trading, helps combat action 'converse'
 INT - intelligence checks, creating new items, used in 'converse' action (w/o the PER addition)
 PER - combat (ranged affecting chance), used when rolling int checks (inspiration), increases loot drops 
 
-Leveling up (should i only trigger this after combat?)
+Leveling up (only after combat?)
 XP is probably a reskin of the 'score' / scoring mechanic
 After XP is equal
 	then level is level + 1
@@ -348,7 +329,5 @@ money/trade
 money is a player variable, easier manipulation
 trade will be in npc talk, then "trade [x] for [y]" will be available or "buy [x]"
 Traders will not move around
-
-
-
 ]
+
