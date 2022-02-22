@@ -175,23 +175,54 @@ Carry out switching off an electric light:
 
 The examine devices rule is not listed in the carry out examining rules.
 
-[can be a consumable or a usable item]
-consumable is a kind of thing.
-item is a kind of thing.
+A consumable is a kind of thing. [kind]
+A consumable is edible. [using in game property]
+A consumable has a number called thirstRemoval. [propeties]
+A consumable has a number called hungerRemoval.
+The thirstRemoval of a consumable is usually 0. [defaults]
+The hungerRemoval of a consumable is usually 0.
+The indefinite article of a consumable is "some". [some <consumable>]
 
-[can be equipable, single/double handed]
-[has numerical stats as well]
-An item can be equipped or not equipped.
+armor is a kind of thing. [kind]
+armor can be worn or not worn.
+armor has a number called effectiveness.
+The effectiveness of armor is usually 0.
+
+An item is a kind of thing. [kind]
+An item can be equipped or not equipped. [properties]
 An item can be singleHand or doubleHand.
 An item can be melee or ranged.
-An item has a number called damage.
+An item has a number called damage. [stats]
 An item has a number called critHit. [percentage]
-
-An item is usually not equipped.
+An item is usually not equipped. [defaults]
 An item is usually singleHand.
 An item is usually melee.
 The damage of an item is usually 0.
 The critHit of an item is usually 4. [4% chance]
+
+clean water is a kind of consumable.
+Understand "water" and "clean" as clean water.
+The description of clean water is "A bottle of pure water.".
+the thirstRemoval of clean water is usually 25.
+
+dirty water is a kind of consumable.
+Understand "dirty" and "water" as dirty water.
+The description of dirty water is "Some rather dirty water. You should try to [bold type]purify[roman type] it.".
+the thirstRemoval of clean water is usually 15.
+
+food is a kind of consumable.
+The description of food is "FOOOD! OM NOM NOM.".
+the hungerRemoval of food is usually 20.
+
+neophyteRevolver is a kind of item.
+neophyteRevolver is not equipped.
+neophyteRevolver is singleHand.
+neophyteRevolver is ranged.
+The damage of neophyteRevolver is 100.
+The critHit of neophyteRevolver is 100.
+The printed name of neophyteRevolver is "Neophyte's OG Revolver".
+The description of neophyteRevolver is "An obsidian-gold revolver, the bright gold woven through the dark obsidian. A sense of blistering heat and whirling sands fills your hand as you hold the developer's imagined weapon.".
+Understand "og revolver" and "obsidian revolver" and "og gun" and "neo gun" and "og" as neophyteRevolver.
 
 [-------------------------------------------------------------------------------------------------------]
 [Help Section ------------------------------------------------------------------------------------------]
@@ -215,6 +246,12 @@ Report HelpingTwo:
 [-------------------------------------------------------------------------------------------------------]
 [Rooms, Regions and Scenery ----------------------------------------------------------------------------]
 [-------------------------------------------------------------------------------------------------------]
+
+Nowhere is a region.
+Nonexistence is in Nowhere.
+
+Nonexistence is a room.
+The description of Nonexistence is "This doesn't exist, you don't exist, this text doesn't exist... Not to mention that you should be here.".
 
 Home is a region.
 Homemade Bunker, Control Room, Garden Center, Wrecked Bedroom is in Home.
@@ -272,10 +309,13 @@ left	central	right
 [Unfair Cheating and Functions--------------------------------------------------------------------------]
 [-------------------------------------------------------------------------------------------------------]
 
+Cheating is a number that varies.
+Cheating is initally 0.
+
 Nonexistence is a room. 
 The description of Nonexistence is "You don't exist! You shouldn't even be here. That aside, items will be here, and NPCs as well.".
 
-[since i actually use this as a function, i guess this isn't cheating.]
+[since I actually use this as a function, I guess this isn't cheating.]
 to shuffleStats:
 	now the strength of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6); 
 	now the dexterity of the player is (a random number from 1 to 6) + (a random number from 1 to 6) + (a random number from 1 to 6);
@@ -287,6 +327,7 @@ to shuffleStats:
 upgrading is an action applying to nothing.
 understand "upgrade me" as upgrading.
 Report upgrading:
+	cheating is now cheating + 1;
 	now the strength of the player is the strength of the player + 1;
 	now the dexterity of the player is the dexterity of the player + 1;
 	now the stamina of the player is the stamina of the player + 1;
@@ -304,6 +345,7 @@ Implement enemies and combat, finish attack X with Y command
 Implement more rooms, items, and a story (duh)
 Implement money / trade system
 Implement hunger / thirst
+Implement armor and wear armor command
 
 Types of checks for each
 STR - combat (melee affecting damage), brute force, leveling up to determine carry capacity
