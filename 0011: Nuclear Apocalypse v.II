@@ -168,7 +168,7 @@ Understand "put on [something]" as armoring.
 Understand "put [something] on" as armoring.
 
 Report armoring:
-	say "You put [the noun] on.".
+	say "hi.".
 
 unarmoring is an action applying to one thing.
 Understand "remove [something]" as unarmoring.
@@ -298,7 +298,7 @@ The description of nuclearBattery is "A dangerous battery which gets energy from
 
 Control Panels is scenery in Control Room.
 Understand "old tech" and "old technology" and "control p" and "panels" as control panels.
-The description of control panels is "A cobbled together piece of computer equipment. Apparenetly the lights, garden center and water purification are all automated already.".
+The description of control panels is "A cobbled together piece of computer equipment. Apparently the lights, garden center and water purification are all automated already.".
 
 Garden Center is a room.
 Garden Center is south of Homemade Bunker.
