@@ -122,11 +122,11 @@ Understand "unequip [something]" as unequipping.
 Report unequipping:
 	if the noun is doubleHand:
 		now amountEquipped is amountEquipped - 2;
-		now the noun is unequipped;
+		now the noun is not equipped;
 		say "You put [the noun] away.";
 	else if the noun is singleHand:
 		now amountEquipped is amountEquipped - 1;
-		now the noun is unequipped;
+		now the noun is not equipped;
 		say "You put [the noun] away.";
 	else:
 		say "You're not even holding it.".
@@ -160,6 +160,24 @@ Report getting food:
 		say "WIP. Will be able to receive item eventually.";
 	otherwise:
 		say "Shouldn't you find a food source first?".
+
+armoring is an action applying to one thing.
+Understand "wear [something]" as armoring.
+Understand "don [something]" as armoring.
+Understand "put on [something]" as armoring.
+Understand "put [something] on" as armoring.
+
+Report armoring:
+	say "You put [the noun] on.".
+
+unarmoring is an action applying to one thing.
+Understand "remove [something]" as unarmoring.
+Understand "shed [something]" as unarmoring.
+Understand "take off [something]" as unarmoring.
+Understand "take [something] off" as unarmoring.
+
+Report unarmoring:
+	say "You take [the noun] off.".
 
 [-------------------------------------------------------------------------------------------------------]
 [Items -------------------------------------------------------------------------------------------------]
@@ -247,12 +265,6 @@ Report HelpingTwo:
 [Rooms, Regions and Scenery ----------------------------------------------------------------------------]
 [-------------------------------------------------------------------------------------------------------]
 
-Nowhere is a region.
-Nonexistence is in Nowhere.
-
-Nonexistence is a room.
-The description of Nonexistence is "This doesn't exist, you don't exist, this text doesn't exist... Not to mention that you should be here.".
-
 Home is a region.
 Homemade Bunker, Control Room, Garden Center, Wrecked Bedroom is in Home.
 
@@ -296,6 +308,12 @@ Wrecked Bedroom is a room.
 Wrecked Bedroom is above Homemade Bunker.
 The description of Wrecked Bedroom is "A master bedroom, reasonably furnished. A trapdoor leads down to the bunker. To the east leads the rest of the house.".
 
+Infinity is a region. [Debug assistance]
+Nonexistence is in Infinity.
+
+Nonexistence is a room.
+The description of Nonexistence is "This doesn't exist, you don't exist, this text doesn't exist... Not to mention that you should be here.".
+
 [-------------------------------------------------------------------------------------------------------]
 [Tables of Reference Information -----------------------------------------------------------------------]
 [-------------------------------------------------------------------------------------------------------]
@@ -310,10 +328,7 @@ left	central	right
 [-------------------------------------------------------------------------------------------------------]
 
 Cheating is a number that varies.
-Cheating is initally 0.
-
-Nonexistence is a room. 
-The description of Nonexistence is "You don't exist! You shouldn't even be here. That aside, items will be here, and NPCs as well.".
+Cheating is initially 0.
 
 [since I actually use this as a function, I guess this isn't cheating.]
 to shuffleStats:
@@ -327,7 +342,7 @@ to shuffleStats:
 upgrading is an action applying to nothing.
 understand "upgrade me" as upgrading.
 Report upgrading:
-	cheating is now cheating + 1;
+	now cheating is cheating + 1;
 	now the strength of the player is the strength of the player + 1;
 	now the dexterity of the player is the dexterity of the player + 1;
 	now the stamina of the player is the stamina of the player + 1;
